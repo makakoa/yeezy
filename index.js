@@ -4,26 +4,33 @@ var _ = require('lodash'),
     fs = require('fs');
 
 // Compiling
-var entry = process.argv[2];
+var entry = './' + process.argv[2];
 if (!entry) throw 'No entry point';
 
 var output = process.argv[3] || 'htmlified.html';
-function write(file) {
-  fs.writeFile(__dirname + '/' + output, file, function(err) {
+function writeHTML(file) {
+  fs.writeFile(__dirname+'/'+output, '<!DOCTYPE html>'+file, function(err) {
     if (err) throw err;
   });
 }
+assert(output.endsWith('.html'), 'Output must end with .html');
 
 try {
-  var content = require('./' + process.argv[2]);
-  write(htmlify(content));
+  var content = require(entry);
+  writeHTML(htmlify(content));
 } catch(e) {
   console.error('Could not write: ', output, e);
-  write(errorPage(e));
+  writeHTML(errorPage(e));
 }
 
 // Main
 function htmlify(arr) {
+  assert(_.isArray(arr), [
+    'Illegal Format: ',
+    JSON.stringify(arr),
+    ' (Must be an array)'
+  ].join(''));
+  if (!arr.length) return '';
   var tag = arr.shift(), attributes = {}, children = [];
   if (tag === 'style') return elementify('style', null, toCSS('', arr[0]));
   while (arr.length) {
@@ -65,13 +72,18 @@ function toCSS(prefix, obj) {
   var nested = '';
   var current = _.map(obj, function(val, key) {
     if (_.isObject(val)) {
-      nested += toCSS(key.startsWith('&')
-                      ? prefix + key.slice(1)
-                      : prefix + ' ' + key, val);
+      if (key.startsWith('@media')) {
+        nested+= [key,'{',toCSS('',val),'}'].join('');
+      } else {
+        nested += toCSS(key.startsWith('&')
+                        ? prefix + key.slice(1)
+                        : prefix + ' ' + key, val);
+      }
       return '';
     }
     return [key,':',val,';'].join('');
   }).join('');
+  if (!current) return nested;
   return [prefix, '{', current, '}', nested ].join('');
 }
 
