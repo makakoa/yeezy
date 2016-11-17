@@ -90,7 +90,9 @@ module.exports = [
           'section-header',
           [
             'left',
-            'Creator of ',
+            ['position', 'Creator of '],
+            // ['u', 'Creator'],
+            // ' of ',
             ['section-name', 'Flybox'],
             ['section-description', ' an Email Compatible Messaging Platform']
           ],
@@ -104,9 +106,9 @@ module.exports = [
           util.list([
             'Designed and built web app from scratch using React with Flux architecture',
             'Constructed REST API with Node and Express backed by a PostgreSQL DB',
-            'Implemented responsive design and ported App to iOS and Android apps through Cordova',
-            'Managed DevOps and tasking',
-            'Integrated AWS, GDC, Heroku, PubNub'
+            'Integrated AWS, GDC, Heroku, PubNub',
+            'Implemented responsive design and ported app to iOS and Android apps through Cordova',
+            'Managed DevOps and tasking'
           ])
         ]
       ],
@@ -118,7 +120,9 @@ module.exports = [
           'section-header',
           [
             'left',
-            'Software Engineer at ',
+            ['position', 'Engineer at '],
+            // ['u', ' Engineer'],
+            // ' at ',
             ['section-name', 'Nomic'],
             ['section-description', ' a Recruiting Platform Startup']
           ],
@@ -205,8 +209,7 @@ module.exports = [
               href: 'http://thecouncil.herokuapp.com'
             }, 'thecouncil.herokuapp.com'],
             ' & ',
-            util.icon('apple'),
-            ' store'
+            ' on iOS'
           ]
         ],
         [
@@ -244,7 +247,7 @@ module.exports = [
           ])
         ]
       ],
-      ['br']
+      ['p', 'Project sources on GitHub']
 
     ],
     ['br'],
@@ -252,10 +255,31 @@ module.exports = [
     [
       'div',
       ['h2', 'Education', util.icon('graduation-cap')],
+
       [
-        'ul',
-        ['li', 'Code Fellows'],
-        ['li', 'University of Washington']
+        'section',
+        [
+          'section-header',
+          ['left', 'Code Fellows: Certificate of Full-Stack JavaScript'],
+          ['right', 'Fall 2014']
+        ]
+      ],
+
+      [
+        'section',
+        [
+          'section-header',
+          [
+            'left',
+            'University of Washing: Bachelor of Science in Neurobiology ',
+            ['span', {
+              style: {
+                'font-family': 'sans-serif'
+              }
+            }, '(3.7)']
+          ],
+          ['right', '2010 - 2014']
+        ]
       ]
     ],
 

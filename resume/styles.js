@@ -124,6 +124,10 @@ module.exports = ['style', {
       display: 'flex',
       'justify-content': 'space-between',
 
+      'position': {
+        color: color.blue
+      },
+
       'section-name': {
         'font-size': '18px',
         color: color.blue
