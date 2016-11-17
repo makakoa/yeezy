@@ -37,8 +37,8 @@ module.exports = ['style', {
       'font-size': '14px',  // standard font-size is 12 - 14px
 
       display: 'flex',
-      'flex-direction': 'column'
-      // 'justify-content': 'space-between'
+      'flex-direction': 'column',
+      'justify-content': 'space-between'
     }
   },
 
@@ -101,6 +101,57 @@ module.exports = ['style', {
       'font-size': '18px',
       opacity: '0.5',
       'margin-left': '12px'
+    }
+  },
+
+  table: {
+    width: '100%',
+    th: {
+      width: '80px',
+      'text-align': 'left'
+    }
+  },
+
+  '#expandskills': {
+    // 'font-size': '12px',
+    display: 'inline-block',
+    'box-sizing': 'border-box',
+    margin: '4px 0 0',
+    padding: '4px 8px',
+    'border-radius': '4px',
+    'color': color.blue,
+    cursor: 'pointer',
+    '&:hover': {
+      'text-decoration': 'underline'
+    }
+  },
+  '#expandcheck': {
+    display: 'none'
+  },
+  '#expandedlist': {
+    width: '100%',
+    padding: '10px 0',
+    'background-color': 'white',
+    'border-bottom': '2px solid gray',
+    'z-index': '2',
+    position: 'absolute',
+    display: 'none'
+  },
+  '#expandcheck:checked + #expandedlist': {
+    display: 'block'
+  },
+
+  'qr-code': {
+    'text-transform': 'lowercase',
+    display: 'none',
+    position: 'absolute',
+    'font-weight': '300',
+    'font-size': '12px',
+    opacity: '0.5',
+    right: '8px',
+    bottom: '8px',
+    img: {
+      height: '50px'
     }
   },
 

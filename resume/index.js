@@ -1,6 +1,22 @@
 'use strict';
 
-var util = require('./util');
+var util = require('./util'),
+    _ = require('lodash');
+
+var skills = {
+  'General': ['JavaScript', 'Git', 'Java', 'Algorithms', 'Data Models',
+              'Code Review'],
+  'Front-end': ['React', 'Flux', 'Angular', 'HTML', 'CSS', 'LESS'],
+  'Back-end': ['Node', 'Express', 'REST', 'PostgreSQL', 'MongoDB', 'Auth']
+};
+
+var expanded = {
+  'Third Party': ['Heroku', 'AWS', 'GoogleAPIs', 'OAuth', 'PubNub'],
+  'DevOps': ['Testing', 'Webpack', 'Make', 'Grunt', 'Gulp'],
+  'Utility': ['Machine Learning', 'Full-text Search', 'Form Validation',
+              'Rich Text Editing', 'Push Notifications'],
+  'Platform': ['Web', 'Mobile Web', 'iOS', 'Android']
+};
 
 module.exports = [
   'html',
@@ -8,6 +24,13 @@ module.exports = [
     'head',
 
     ['title', 'Cameron Yee'],
+
+    ['meta', {
+      name: 'viewport',
+      content: 'width=device-width, height=device-height, initial-scale=1, '
+        + 'maximum-scale=1, user-scalable=no'
+    }],
+
 
     ['link', {
       rel: 'icon',
@@ -34,6 +57,12 @@ module.exports = [
           width: '100%',
           'padding': 0
         },
+        '#expandskills': {
+          display: 'none'
+        },
+        'qr-code': {
+          display: 'block'
+        },
         'yeezyhtml-tag': {
           display: 'none'
         }
@@ -49,34 +78,55 @@ module.exports = [
 
     [
       'div',
+      {style: {position: 'relative'}},
+
       ['h2', 'Skills', util.icon('code')],
+
       [
         'table',
-        {style: {
-          width: '100%'
-        }},
+        {id: 'shortlist'},
+        _.map(skills, function(v, k) {
+          return [
+            'tr',
+            ['th', k],
+            _.map(v, function(s) {
+              return ['td', s];
+            })
+          ];
+        })
+      ],
+
+      ['input', {
+        id: 'expandcheck',
+        type: 'checkbox'
+      }],
+      [
+        'div',
+        {id: 'expandedlist'},
         [
-          'tr',
-          ['td', 'JavaScript'],
-          ['td', 'Node'],
-          ['td', 'Git'],
-          ['td', 'Java']
+          'table',
+          _.map(expanded, function(v, k) {
+            return [
+              'tr',
+              ['th', k],
+              _.map(v, function(s) {
+                return ['td', s];
+              })
+            ];
+          })
         ],
-        [
-          'tr',
-          ['td', 'HTML'],
-          ['td', 'CSS'],
-          ['td', 'React'],
-          ['td', 'Angular']
-        ],
-        [
-          'tr',
-          ['td', 'Postgres'],
-          ['td', 'Mongo'],
-          ['td', 'Heroku'],
-          ['td', 'REST']
-        ]
-      ]
+        ['label', {
+          id: 'expandskills',
+          for: 'expandcheck'
+        }, 'Collapse']
+
+      ],
+
+      ['label', {
+        id: 'expandskills',
+        for: 'expandcheck'
+      }, 'Expand Skills']
+
     ],
     ['br'],
 
@@ -247,10 +297,15 @@ module.exports = [
           ])
         ]
       ],
-      ['p', 'Project sources on GitHub']
+      ['span', {
+        style: {
+          display: 'inline-block',
+          margin: '8px 0',
+          color: 'gray'
+        }
+      }, '(Project sources on GitHub)']
 
     ],
-    ['br'],
 
     [
       'div',
@@ -284,8 +339,14 @@ module.exports = [
     ],
 
     [
+      'qr-code',
+      'Web Version ',
+      ['img', {src: './resume/qrcode.svg'}]
+    ],
+
+    [
       'yeezyhtml-tag',
-      'built with ',
+      'built from scratch with ',
       ['a', {
         href: 'https://github.com/makakoa/yeezyhtml'
       }, 'yeezyhtml']
