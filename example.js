@@ -203,7 +203,7 @@ module.exports = [
       ['p', 'Compiling '],
       [
         'code',
-        'node index',
+        'node index.js',
         tooltip(' example', 'Entry'), // Functions!
         tooltip(' index.html', 'Output')
       ]
@@ -217,7 +217,7 @@ module.exports = [
       [
         'code',
         tooltip('nodemon', 'Immediately updates on changes!'),
-        ' index example index.html'
+        ' index.js example index.html'
       ]
     ]
 

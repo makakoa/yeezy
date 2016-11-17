@@ -52,6 +52,9 @@ function htmlify(arr) {
 }
 
 function elementify(tag, atts, content) {
+  if (_.includes(['input', 'br', 'meta', 'link'], tag)) {
+    return ['<',tag,atts,'/>'].join('');
+  }
   return ['<',tag,atts,'>',content,'</',tag,'>'].join('');
 }
 

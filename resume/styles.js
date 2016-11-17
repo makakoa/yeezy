@@ -1,6 +1,10 @@
 'use strict';
 
+var paddingMinor = '6px';
+
 var color = {
+  gray: '#777777',
+  blue: '#4279ff',
   font: '#444444'
 };
 
@@ -10,14 +14,15 @@ module.exports = ['style', {
     padding: '20px', // remove in print styles
     margin: '0 auto',
     overflow: 'auto',
-    width: '827px',   // a4 dimensions
-    height: '1169px', // a4 dimensions
+    width: '850px',   // page dimensions, alt: a4 = 827
+    height: '1100px', // page dimensions, alt: a4 = 1169
 
     display: 'flex',
     'justify-content': 'center',
     'align-items': 'center',
 
     body: {
+      position: 'relative',
       'box-shadow': '0 0 20px 0px gray', // borders show in print
       overflow: 'hidden',
       'background-color': 'white',
@@ -28,29 +33,97 @@ module.exports = ['style', {
       'font-family': '"Raleway"',
       color: color.font,
       'box-sizing': 'border-box',
-      padding: '40px',
+      padding: '8%',        // 1" / 8.5" = ~11.76% standard resume margin
+      'font-size': '16px',  // standard font-size is 12 - 14px
 
       display: 'flex',
-      'flex-direction': 'column',
-      'justify-content': 'space-between'
+      'flex-direction': 'column'
+      // 'justify-content': 'space-between'
     }
   },
 
+  '.redacted': {
+    'text-decoration': 'line-through',
+    color: 'gray'
+  },
+
+  'h1,h2,h3,padding': {
+    margin: 0,
+    padding: 0
+  },
+  ul: {
+    margin: 0
+  },
+
   'a:visited': {
-    color: 'blue'
+    color: color.blue
   },
 
   h1: {
-    'font-weight': '300',
-    'text-transform': 'uppercase'
+    'font-size': '48px',
+    'font-weight': '400'
+  },
+
+  'header-title': {
+    color: '#888888',
+    'text-transform': 'uppercase',
+    'letter-spacing': '1px'
   },
 
   header: {
     display: 'flex',
     'justify-content': 'space-between',
-    a: {
+    'a': {
+      'text-decoration': 'none',
+      'color': color.blue
+    },
+    '.header-info-item': {
+      '.fa': {
+        'margin-right': '4px',
+        width: '20px',
+        'text-align': 'center'
+      },
+
+      'font-family': 'sans-serif',
+      'font-weight': '300',
+      'line-height': '20px',
+      'font-size': '14px',
       display: 'block'
     }
 
+  },
+
+  h2: { // section headers
+    'margin-bottom': paddingMinor
+  },
+
+  'yeezyhtml-tag': {
+    'font-size': '14px',
+    'font-weight': '300',
+    opacity: '0.75',
+    display: 'inline-block',
+    position: 'absolute',
+    bottom: '8px',
+    right: '8px',
+    color: color.font,
+    a: {
+      'text-decoration': 'none'
+    }
+  },
+
+  'section': {
+    'section-header': {
+      'margin-bottom': paddingMinor,
+      display: 'flex',
+      'justify-content': 'space-between',
+
+      'section-name': {
+        'font-size': '18px',
+        color: color.blue
+      },
+      'section-description': {
+        color: color.gray
+      }
+    }
   }
 }];
