@@ -1,4 +1,5 @@
 # yeezyhtml
-_Easy JS only sites without a framework_
+_JS HTML_
 
-This is a little exploration into the idea of writing HTML and CSS in JavaScript
+Yeezy to read.
+Yeezy to write.
