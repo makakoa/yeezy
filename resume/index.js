@@ -49,7 +49,7 @@ module.exports = [
 
     [
       'div',
-      ['h2', 'Skills'],
+      ['h2', 'Skills', util.icon('code')],
       [
         'table',
         {style: {
@@ -82,7 +82,7 @@ module.exports = [
 
     [
       'div',
-      ['h2', 'Work'],
+      ['h2', 'Work', util.icon('calendar-check-o')],
 
       [
         'section',
@@ -136,26 +136,122 @@ module.exports = [
             'Frequently pair programmed and code reviewed'
           ])
         ]
-      ]
+      ],
+      ['br'],
 
-    ],
-    ['br'],
-
-    [
-      'div',
-      'Projects',
       [
-        'ul',
-        ['li', 'braincryption'],
-        ['li', 'the council'],
-        ['li', 'yeezyhtml']
+        'section',
+        [
+          'section-header',
+          ['left', 'Bioinformatics Intern at Garmire Lab UHCC'],
+          ['right', 'Summer 2013']
+        ]
+      ],
+
+      [
+        'section',
+        [
+          'section-header',
+          ['left', 'Calculus Tutor at University of Washington Learning Center'],
+          ['right', '2011-2013']
+        ]
       ]
+
     ],
     ['br'],
 
     [
       'div',
-      'Education',
+      ['h2', 'Projects', util.icon('code-fork')],
+
+      [
+        'section',
+        [
+          'section-header',
+          [
+            'left',
+            ['section-name', 'Braincryption'],
+            ['section-description', ' Visual Encryption Experiment']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'http://makakoa.github.io/braincryption/app/'
+            }, 'makakoa.github.io/braincryption/app']
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'Web App built with Vanilla JavaScript, HTML, and CSS',
+            'Created Supplementary Chrome Extension'
+          ])
+        ]
+      ],
+      ['br'],
+
+[
+        'section',
+        [
+          'section-header',
+          [
+            'left',
+            ['section-name', 'The Council'],
+            ['section-description', ' Crowd-sourced Coin Flipping']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'http://thecouncil.herokuapp.com'
+            }, 'thecouncil.herokuapp.com'],
+            ' & ',
+            util.icon('apple'),
+            ' store'
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'Web App built with React and Flux architecture',
+            'Socket API built with Node and Socket.io',
+            'Ported app to iOS with Cordova and published on App Store'
+          ])
+        ]
+      ],
+      ['br'],
+
+      [
+        'section',
+        [
+          'section-header',
+          [
+            'left',
+            ['section-name', 'YeezyHTML'],
+            ['section-description', ' HTML that thinks it\'s JS']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://makakoa.github.io/yeezyhtml/'
+            }, 'makakoa.github.io/yeezyhtml'],
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'JS to static HTML + CSS compiler',
+            'Used to build this resume (source in project page)'
+          ])
+        ]
+      ],
+      ['br']
+
+    ],
+    ['br'],
+
+    [
+      'div',
+      ['h2', 'Education', util.icon('graduation-cap')],
       [
         'ul',
         ['li', 'Code Fellows'],

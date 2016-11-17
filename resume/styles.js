@@ -34,7 +34,7 @@ module.exports = ['style', {
       color: color.font,
       'box-sizing': 'border-box',
       padding: '8%',        // 1" / 8.5" = ~11.76% standard resume margin
-      'font-size': '16px',  // standard font-size is 12 - 14px
+      'font-size': '14px',  // standard font-size is 12 - 14px
 
       display: 'flex',
       'flex-direction': 'column'
@@ -94,7 +94,14 @@ module.exports = ['style', {
   },
 
   h2: { // section headers
-    'margin-bottom': paddingMinor
+    display: 'flex',
+    'align-items': 'center',
+    'margin-bottom': paddingMinor,
+    '.fa': {
+      'font-size': '18px',
+      opacity: '0.5',
+      'margin-left': '12px'
+    }
   },
 
   'yeezyhtml-tag': {
