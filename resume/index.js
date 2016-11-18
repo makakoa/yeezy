@@ -127,6 +127,9 @@ module.exports = [
         },
         'yeezyhtml-tag': {
           display: 'none'
+        },
+        options: {
+          display: 'none'
         }
       }
     }]
@@ -423,6 +426,24 @@ module.exports = [
       ['a', {
         href: 'https://github.com/makakoa/yeezyhtml'
       }, 'yeezyhtml']
+    ],
+
+    [
+      'options',
+      ['button', {
+        class: 'option',
+        onClick:'window.print()'
+      }, 'Print'],
+      ['a', {
+        class: 'option',
+        href: 'path_to_file',
+        download: './resume/cameron-yee-resume.pdf'
+      }, 'Download PDF'],
+      ['a', {
+        href: 'path_to_file',
+        class: 'option',
+        download: './resume.html'
+      }, 'Download Web Version']
     ],
 
     ['keywords', keywords]

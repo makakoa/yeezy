@@ -3,6 +3,7 @@
 var paddingMinor = '6px';
 
 var color = {
+  border: '#bbbbbb',
   gray: '#777777',
   blue: '#4279ff',
   font: '#444444'
@@ -11,7 +12,7 @@ var color = {
 module.exports = ['style', {
   html: {
     'background-color': '#eeeeee',
-    padding: '20px', // remove in print styles
+    padding: '20px 20px 50px', // remove in print styles
     margin: '0 auto',
     overflow: 'auto',
     width: '850px',   // page dimensions, alt: a4 = 827
@@ -24,7 +25,6 @@ module.exports = ['style', {
     body: {
       position: 'relative',
       'box-shadow': '0 0 20px 0px gray', // borders show in print
-      overflow: 'hidden',
       'background-color': 'white',
       width: '100%',
       height: '100%',
@@ -163,13 +163,49 @@ module.exports = ['style', {
     }
   },
 
+  'options': {
+    position: 'absolute',
+    left: '105%',
+    top: '0',
+    'border-radius': '4px',
+    'border': '1px solid ' + color.border,
+    'letter-spacing': '1px',
+    overflow: 'hidden',
+    display: 'flex',
+    'flex-direction': 'column',
+
+    form: {
+      display: 'block'
+    },
+    '.option': {
+      'text-align': 'center',
+      color: color.font,
+      'text-decoration': 'none',
+      'white-space': 'nowrap',
+      'font-size': '16px',
+      display: 'block',
+      cursor: 'pointer',
+      'background-color': '#ffffff',
+      border: 'none',
+      padding: '8px 16px',
+      transition: '300ms',
+      'border-bottom': '1px solid ' + color.border,
+      '&:last-child': {
+        'border-bottom': 'none'
+      },
+      '&:hover': {
+        'color': color.blue
+      }
+    }
+  },
+
   'yeezyhtml-tag': {
     'font-size': '14px',
     'font-weight': '300',
-    opacity: '0.75',
     display: 'inline-block',
     position: 'absolute',
-    bottom: '8px',
+    top: '100%',
+    'margin-top': '8px',
     right: '8px',
     color: color.font,
     a: {
