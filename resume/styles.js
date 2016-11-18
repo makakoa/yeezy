@@ -42,6 +42,11 @@ module.exports = ['style', {
     }
   },
 
+  'keywords': {
+    'font-size': '0.1px',
+    opacity: 0.001
+  },
+
   '.redacted': {
     'text-decoration': 'line-through',
     color: 'gray'

@@ -1,7 +1,13 @@
 'use strict';
 
 var util = require('./util'),
+    fs = require('fs'),
     _ = require('lodash');
+
+var keywords = fs.readFileSync('./resume/keywords.txt')
+      .toString()
+      .split('\n')
+      .join(' ');
 
 var skills = {
   'General': ['JavaScript', 'Git', 'Java', 'Algorithms', 'Data Models',
@@ -350,7 +356,9 @@ module.exports = [
       ['a', {
         href: 'https://github.com/makakoa/yeezyhtml'
       }, 'yeezyhtml']
-    ]
+    ],
+
+    ['keywords', keywords]
 
   ]
 ];
