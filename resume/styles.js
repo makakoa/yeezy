@@ -18,7 +18,7 @@ module.exports = ['style', {
     height: '1100px', // page dimensions, alt: a4 = 1169
 
     display: 'flex',
-    'justify-content': 'center',
+    // 'justify-content': 'center',
     'align-items': 'center',
 
     body: {
@@ -80,7 +80,10 @@ module.exports = ['style', {
     'justify-content': 'space-between',
     'a': {
       'text-decoration': 'none',
-      'color': color.blue
+      'color': color.blue,
+      '&:hover': {
+        'text-decoration': 'underline'
+      }
     },
     '.header-info-item': {
       '.fa': {

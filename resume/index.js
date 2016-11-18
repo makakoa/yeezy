@@ -57,11 +57,67 @@ module.exports = [
     require('./styles'),
 
     ['style', {
+      '@media (max-device-width: 640px)': {
+        html: {
+          display: 'block',
+          overflow: 'auto',
+          padding: 0,
+          height: '100vh',
+          width: '100vw',
+          body: {
+            overflow: 'auto',
+            height: 'initial',
+            padding: '20px'
+          }
+        },
+        'header': {
+          'text-align': 'center',
+          'flex-direction': 'column',
+          '.header-info-item': {
+            'margin-top': '4px',
+            padding: '4px'
+          }
+        },
+        'section': {
+          'section-header': {
+            'flex-direction': 'column',
+            'section-description': {
+              'margin': '4px 0',
+              display: 'block'
+            }
+          }
+        },
+        table: {
+          display: 'block',
+          tr: {
+            display: 'block',
+            'margin-bottom': '8px'
+          },
+          th: {
+            display: 'block'
+          },
+          td: {
+            display: 'inline-block',
+            'margin-right': '4px'
+          }
+        },
+        'ul': {
+          'padding-left': '20px',
+          li: {
+            margin: '4px 0'
+          }
+        }
+      },
+
       '@media print': {
         'html': {
           height: '100%',
           width: '100%',
-          'padding': 0
+          'padding': 0,
+          'body': {
+            height: '100%',
+            width: '100%'
+          }
         },
         '#expandskills': {
           display: 'none'
@@ -84,7 +140,10 @@ module.exports = [
 
     [
       'div',
-      {style: {position: 'relative'}},
+      {
+        class: 'skills',
+        style: {position: 'relative'}
+      },
 
       ['h2', 'Skills', util.icon('code')],
 
@@ -150,11 +209,14 @@ module.exports = [
             // ['u', 'Creator'],
             // ' of ',
             ['section-name', 'Flybox'],
-            ['section-description', ' an Email Compatible Messaging Platform']
+            ['section-description', ' Email Compatible Messaging Platform']
           ],
           [
             'right',
-            'July 2016 - Present'
+            ['a', {
+              href: 'https://alpha.flybox.online/about'
+            }, 'flybox.online'],
+            ' July 2016 - Present'
           ]
         ],
         [
@@ -164,7 +226,7 @@ module.exports = [
             'Constructed REST API with Node and Express backed by a PostgreSQL DB',
             'Integrated AWS, GDC, Heroku, PubNub',
             'Implemented responsive design and ported app to iOS and Android apps through Cordova',
-            'Managed DevOps and tasking'
+            'Managed DevOps and project management'
           ])
         ]
       ],
@@ -180,11 +242,14 @@ module.exports = [
             // ['u', ' Engineer'],
             // ' at ',
             ['section-name', 'Nomic'],
-            ['section-description', ' a Recruiting Platform Startup']
+            ['section-description', ' Recruiting Platform Startup']
           ],
           [
             'right',
-            'May 2015 - July 2016'
+            ['a', {
+              href: 'https://nomic.com'
+            }, 'nomic.com'],
+            ' April 2015 - July 2016'
           ]
         ],
         [
@@ -305,6 +370,8 @@ module.exports = [
       ],
       ['span', {
         style: {
+          width: '100%',
+          'text-align': 'right',
           display: 'inline-block',
           margin: '8px 0',
           color: 'gray'
