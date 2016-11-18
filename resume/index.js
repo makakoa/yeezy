@@ -57,7 +57,8 @@ module.exports = [
     require('./styles'),
 
     ['style', {
-      '@media (max-device-width: 640px)': {
+      // mobile styles
+      '@media screen and (max-width: 640px)': {
         html: {
           display: 'block',
           overflow: 'auto',
@@ -70,6 +71,29 @@ module.exports = [
             padding: '20px'
           }
         },
+
+        'side-area': {
+          display: 'block',
+          position: 'initial',
+          profile: {
+            img: {
+              display: 'block',
+              margin: '20px auto 0'
+            },
+            div: {
+              margin: '10px'
+            }
+          },
+          'actions': {
+            'margin-top': '0',
+            'box-shadow': 'none',
+
+            '.action': {
+              padding: '20px'
+            }
+          }
+        },
+
         'header': {
           'text-align': 'center',
           'flex-direction': 'column',
@@ -78,6 +102,7 @@ module.exports = [
             padding: '4px'
           }
         },
+
         'section': {
           'section-header': {
             'flex-direction': 'column',
@@ -87,6 +112,7 @@ module.exports = [
             }
           }
         },
+
         table: {
           display: 'block',
           tr: {
@@ -109,6 +135,15 @@ module.exports = [
         }
       },
 
+      '@media (min-width: 1150px)': {
+        'html': {
+          'padding-right': '240px'
+        },
+        'side-area': {
+          display: 'block'
+        }
+      },
+
       '@media print': {
         'html': {
           height: '100%',
@@ -128,7 +163,7 @@ module.exports = [
         'yeezyhtml-tag': {
           display: 'none'
         },
-        actions: {
+        'side-area': {
           display: 'none'
         }
       }
@@ -427,22 +462,42 @@ module.exports = [
     ],
 
     [
-      'actions',
-      ['button', {
-        class: 'action',
-        onClick:'window.print()'
-      }, 'Print'],
-      ['a', {
-        class: 'action',
-        href: 'path_to_file',
-        download: './resume/cameron-yee-resume.pdf'
-      }, 'Download PDF']
-      // ['a', {
-      //   href: 'path_to_file',
-      //   class: 'action',
-      //   download: './resume.html'
-      // }, 'Download HTML']
+      'side-area',
+      [
+        'profile',
+        ['img', {
+          src: 'https://res.cloudinary.com/flybox-local/image/upload/1-4d50d0d'
+          + '96102b3bc8f6dd2f1556b0daaf355c24acfee4a26f0f1921f53149cd2.png'
+        }],
+        [
+          'div',
+          ['name', 'Cameron Yee'],
+          ['label', 'Full-Stack Developer']
+        ]
+      ],
+
+      [
+        'actions',
+
+        ['a', {
+          class: 'action',
+          href: 'path_to_file',
+          download: './resume/cameron-yee-resume.pdf'
+        }, 'Download'],
+
+        ['button', {
+          class: 'action',
+          onClick:'window.print()'
+        }, 'Print']
+
+        // ['a', {
+        //   href: 'path_to_file',
+        //   class: 'action',
+        //   download: './resume.html'
+        // }, 'Download HTML']
+      ]
     ],
+
 
     ['keywords', keywords]
 

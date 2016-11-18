@@ -182,44 +182,75 @@ module.exports = ['style', {
     }
   },
 
-  'actions': {
-    'box-shadow': '0 0 15px -3px gray',
+  'side-area': {
+    display: 'none',
     position: 'absolute',
     left: '105%',
-    top: '0',
-    'border-radius': '4px',
-    'border': '1px solid ' + color.border,
-    'letter-spacing': '1px',
-    overflow: 'hidden',
-    display: 'flex',
-    'flex-direction': 'column',
+    top: '60px',
 
-    form: {
-      display: 'block'
-    },
-    '.action': {
-      'text-align': 'center',
-      color: color.font,
-      'text-decoration': 'none',
-      'white-space': 'nowrap',
-      'font-size': '16px',
-      display: 'block',
-      cursor: 'pointer',
-      'background-color': '#ffffff',
-      border: 'none',
-      padding: '10px 20px',
-      transition: '300ms',
-      'border-bottom': '1px solid ' + color.border,
-      '&:last-child': {
-        'border-bottom': 'none'
+    'profile': {
+      img: {
+        'box-shadow': '0 0 15px -3px gray',
+        'border-radius': '50%',
+        height: '200px'
       },
-      '&:hover': {
-        'box-shadow': '0 0 15px -5px gray',
-        'z-index': '1',
-        'color': color.blue
+
+      div: {
+        // 'box-shadow': '0 0 15px -3px gray',
+        // border: '1px solid ' + color.border,
+        'border-radius': '4px',
+        margin: '20px 0',
+        padding: '8px',
+        // 'background-color': 'white',
+
+        'text-align': 'center',
+        'name': {
+          display: 'block',
+          'font-size': '28px'
+        },
+        'label': {
+          'font-size': '16px',
+          color: color.blue
+        }
+      }
+    },
+
+    'actions': {
+      'box-shadow': '0 0 15px -3px gray',
+      'border-radius': '4px',
+      'border': '1px solid ' + color.border,
+      'letter-spacing': '1px',
+      overflow: 'hidden',
+      display: 'flex',
+      'flex-direction': 'column',
+      'margin-top': '40px',
+
+      '.action': {
+        'text-align': 'center',
+        color: color.font,
+        'text-decoration': 'none',
+        'white-space': 'nowrap',
+        'font-size': '16px',
+        display: 'block',
+        cursor: 'pointer',
+        'background-color': '#ffffff',
+        border: 'none',
+        padding: '10px 20px',
+        transition: '300ms',
+        'border-bottom': '1px solid ' + color.border,
+        '&:last-child': {
+          'border-bottom': 'none'
+        },
+        '&:hover': {
+          'box-shadow': '0 0 15px -5px gray',
+          'z-index': '1',
+          'color': color.blue
+        }
       }
     }
   },
+
+
 
   'yeezyhtml-tag': {
     'font-size': '14px',
