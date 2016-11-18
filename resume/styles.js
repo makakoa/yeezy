@@ -42,6 +42,10 @@ module.exports = ['style', {
     }
   },
 
+  num: {
+    'font-family': 'Arial, sans-serif' // raleway numbers are jank
+  },
+
   'keywords': {
     'font-size': '0.1px',
     opacity: 0.001
@@ -57,7 +61,17 @@ module.exports = ['style', {
     padding: 0
   },
   ul: {
-    margin: 0
+    margin: 0,
+    li: {
+      'line-height': '18px'
+    }
+  },
+
+  button: {
+    '&:focus': {
+      'outline-width': '0',
+      outline: 'none'
+    }
   },
 
   'a:visited': {
@@ -92,7 +106,7 @@ module.exports = ['style', {
         'text-align': 'center'
       },
 
-      'font-family': 'sans-serif',
+      'font-family': 'sans-serif', // raleway nums are jank
       'font-weight': '300',
       'line-height': '20px',
       'font-size': '14px',
@@ -153,17 +167,23 @@ module.exports = ['style', {
     'text-transform': 'lowercase',
     display: 'none',
     position: 'absolute',
-    'font-weight': '300',
-    'font-size': '12px',
     opacity: '0.5',
     right: '8px',
     bottom: '8px',
+    'a': {
+      'font-weight': '300',
+      'font-size': '12px',
+      'text-decoration': 'none',
+      color: color.font
+    },
     img: {
+      'margin-left': '8px',
       height: '50px'
     }
   },
 
-  'options': {
+  'actions': {
+    'box-shadow': '0 0 15px -3px gray',
     position: 'absolute',
     left: '105%',
     top: '0',
@@ -177,7 +197,7 @@ module.exports = ['style', {
     form: {
       display: 'block'
     },
-    '.option': {
+    '.action': {
       'text-align': 'center',
       color: color.font,
       'text-decoration': 'none',
@@ -187,13 +207,15 @@ module.exports = ['style', {
       cursor: 'pointer',
       'background-color': '#ffffff',
       border: 'none',
-      padding: '8px 16px',
+      padding: '10px 20px',
       transition: '300ms',
       'border-bottom': '1px solid ' + color.border,
       '&:last-child': {
         'border-bottom': 'none'
       },
       '&:hover': {
+        'box-shadow': '0 0 15px -5px gray',
+        'z-index': '1',
         'color': color.blue
       }
     }

@@ -21,7 +21,7 @@ var expanded = {
   'DevOps': ['Testing', 'Webpack', 'Make', 'Grunt', 'Gulp'],
   'Utility': ['Machine Learning', 'Full-text Search', 'Form Validation',
               'Rich Text Editing', 'Push Notifications'],
-  'Platform': ['Web', 'Mobile Web', 'iOS', 'Android']
+  'Platform': ['Web', 'Mobile Web', 'iOS', 'Android', 'Cloud']
 };
 
 module.exports = [
@@ -128,7 +128,7 @@ module.exports = [
         'yeezyhtml-tag': {
           display: 'none'
         },
-        options: {
+        actions: {
           display: 'none'
         }
       }
@@ -228,7 +228,7 @@ module.exports = [
             'Designed and built web app from scratch using React with Flux architecture',
             'Constructed REST API with Node and Express backed by a PostgreSQL DB',
             'Integrated AWS, GDC, Heroku, PubNub',
-            'Implemented responsive design and ported app to iOS and Android apps through Cordova',
+            'Implemented responsive design and ported app to iOS and Android through Cordova',
             'Managed DevOps and project management'
           ])
         ]
@@ -403,11 +403,7 @@ module.exports = [
           [
             'left',
             'University of Washing: Bachelor of Science in Neurobiology ',
-            ['span', {
-              style: {
-                'font-family': 'sans-serif'
-              }
-            }, '(3.7)']
+            ['num', '(3.7)']
           ],
           ['right', '2010 - 2014']
         ]
@@ -416,7 +412,9 @@ module.exports = [
 
     [
       'qr-code',
-      'Web Version ',
+      ['a', {
+        href: 'http://cameron-yee.com/resume'
+      }, 'cameron-yee.com/resume'],
       ['img', {src: './resume/qrcode.svg'}]
     ],
 
@@ -429,21 +427,21 @@ module.exports = [
     ],
 
     [
-      'options',
+      'actions',
       ['button', {
-        class: 'option',
+        class: 'action',
         onClick:'window.print()'
       }, 'Print'],
       ['a', {
-        class: 'option',
+        class: 'action',
         href: 'path_to_file',
         download: './resume/cameron-yee-resume.pdf'
-      }, 'Download PDF'],
-      ['a', {
-        href: 'path_to_file',
-        class: 'option',
-        download: './resume.html'
-      }, 'Download Web Version']
+      }, 'Download PDF']
+      // ['a', {
+      //   href: 'path_to_file',
+      //   class: 'action',
+      //   download: './resume.html'
+      // }, 'Download HTML']
     ],
 
     ['keywords', keywords]
