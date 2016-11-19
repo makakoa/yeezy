@@ -79,6 +79,7 @@ module.exports = ['style', {
   },
 
   h1: {
+    'white-space': 'nowrap',
     'font-size': '48px',
     'font-weight': '400'
   },
@@ -90,6 +91,7 @@ module.exports = ['style', {
   },
 
   header: {
+    'flex-shrink': '0',
     display: 'flex',
     'justify-content': 'space-between',
     'a': {
@@ -184,8 +186,10 @@ module.exports = ['style', {
 
   'side-area': {
     display: 'none',
-    position: 'absolute',
-    left: '105%',
+    position: 'fixed',
+    left: 'calc(50% + 350px)',
+    // position: 'absolute',
+    // left: '105%',
     top: '60px',
 
     'profile': {

@@ -4,6 +4,8 @@ var util = require('./util'),
     fs = require('fs'),
     _ = require('lodash');
 
+var resumePath = './resume/cameron-yee-resume-redacted.pdf';
+
 var keywords = fs.readFileSync('./resume/keywords.txt')
       .toString()
       .split('\n')
@@ -165,6 +167,13 @@ module.exports = [
         },
         'side-area': {
           display: 'none'
+        },
+
+        'section-header': {
+          'a': {
+            'text-decoration': 'none',
+            'border-bottom': '1px solid rgba(66,121,255,0.5)' // better on pdf
+          }
         }
       }
     }]
@@ -476,18 +485,34 @@ module.exports = [
         ]
       ],
 
+      ['iframe', {
+        style: {
+          display: 'none'
+        },
+        name: 'pdf',
+        id: 'pdf',
+        src: resumePath
+      }],
+
       [
         'actions',
 
         ['a', {
           class: 'action',
-          href: 'path_to_file',
-          download: './resume/cameron-yee-resume.pdf'
+          target: '_blank',
+          href: resumePath
+        }, 'Open PDF'],
+
+        ['a', {
+          class: 'action',
+          href: resumePath,
+          download: null
         }, 'Download'],
 
         ['button', {
           class: 'action',
-          onClick:'window.print()'
+          onClick: 'var r=window.frames.pdf;r.focus();r.print()'
+          // onClick:'window.print()'
         }, 'Print']
 
         // ['a', {
