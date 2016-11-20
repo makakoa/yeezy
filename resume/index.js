@@ -151,7 +151,9 @@ module.exports = [
           height: '100%',
           width: '100%',
           'padding': 0,
+          border: 'none',
           'body': {
+            border: 'none',
             height: '100%',
             width: '100%'
           }
@@ -160,7 +162,7 @@ module.exports = [
           display: 'none'
         },
         'qr-code': {
-          display: 'block'
+          // display: 'block'
         },
         'yeezyhtml-tag': {
           display: 'none'
@@ -458,8 +460,8 @@ module.exports = [
       'qr-code',
       ['a', {
         href: 'http://cameron-yee.com/resume'
-      }, 'cameron-yee.com/resume'],
-      ['img', {src: './resume/qrcode.svg'}]
+      }, 'cameron-yee.com/resume']
+      // ['img', {src: './resume/qrcode.svg'}]
     ],
 
     [
