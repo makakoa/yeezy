@@ -271,9 +271,9 @@ module.exports = [
         [
           'section-content',
           util.list([
-            'Designed and built web app from scratch using React with Flux architecture',
+            'Designed and built SPA from scratch using React with Flux architecture',
             'Constructed REST API with Node and Express backed by a PostgreSQL DB',
-            'Integrated AWS, GDC, Heroku, PubNub',
+            'Integrated with AWS, GDC, Heroku, PubNub, Gmail',
             'Implemented responsive design and ported app to iOS and Android through Cordova',
             'Managed DevOps and project management'
           ])
@@ -304,9 +304,9 @@ module.exports = [
         [
           'section-content',
           util.list([
-            'Collaborated on multiple web and mobile apps built with and in-house framework o2.js',
+            'Collaborated on multiple web and mobile apps built with an in-house framework o2.js',
             'Interviewed engineering candidates and onboarded new team members',
-            'Contributed to UI design and App architecture',
+            'Contributed to UI design, app architecture, and project management',
             'Frequently pair programmed and code reviewed'
           ])
         ]
@@ -340,8 +340,37 @@ module.exports = [
 
       [
         'section',
+        {style: {'margin-bottom': '6px'}},
         [
           'section-header',
+          {style: {'margin-bottom': 0}},
+          [
+            'left',
+            ['section-name', 'Enviz'],
+            ['section-description', ' Intelligent Image Feed']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://enviz.herokuapp.com'
+            }, 'enviz.herokuapp.com']
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'SPA built with React + Flux on a Node + Express API, uses Imgur OAuth',
+            'Uses a deep convolutional neural network to model and predict image preferences'
+          ])
+        ]
+      ],
+
+      [
+        'section',
+        {style: {'margin-bottom': '6px'}},
+        [
+          'section-header',
+          {style: {'margin-bottom': 0}},
           [
             'left',
             ['section-name', 'Braincryption'],
@@ -362,12 +391,13 @@ module.exports = [
           ])
         ]
       ],
-      ['br'],
 
-[
+      [
         'section',
+        {style: {'margin-bottom': '6px'}},
         [
           'section-header',
+          {style: {'margin-bottom': 0}},
           [
             'left',
             ['section-name', 'The Council'],
@@ -385,18 +415,18 @@ module.exports = [
         [
           'section-content',
           util.list([
-            'Web App built with React and Flux architecture',
-            'Socket API built with Node and Socket.io',
+            'SPA built with React + Flux on Node + Express + Socket.io API',
             'Ported app to iOS with Cordova and published on App Store'
           ])
         ]
       ],
-      ['br'],
 
       [
         'section',
+        {style: {'margin-bottom': '6px'}},
         [
           'section-header',
+          {style: {'margin-bottom': 0}},
           [
             'left',
             ['section-name', 'YeezyHTML'],
@@ -509,13 +539,13 @@ module.exports = [
           class: 'action',
           href: resumePath,
           download: null
-        }, 'Download'],
+        }, 'Download']
 
-        ['button', {
-          class: 'action',
-          onClick: 'var r=window.frames.pdf;r.focus();r.print()'
-          // onClick:'window.print()'
-        }, 'Print']
+        // ['button', {
+        //   class: 'action',
+        //   onClick: 'var r=window.frames.pdf;r.focus();r.print()'
+        //   // onClick:'window.print()'
+        // }, 'Print']
 
         // ['a', {
         //   href: 'path_to_file',
