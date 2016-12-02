@@ -26,14 +26,14 @@ module.exports = [
     ['a', {
       class: [
         'header-info-item',
-        phone ? '' : 'redacted'
+        phone ? 'contact' : 'redacted'
       ].join(' '),
       href: 'tel:' + phone
     }, util.icon('phone'), phone || '555-123-4567'],
     ['a', {
       class: [
         'header-info-item',
-        email ? '' : 'redacted'
+        email ? 'contact' : 'redacted'
       ].join(' '),
       href: 'mailto:' + email
     }, util.icon('envelope-o'), email || 'email@example.com'],

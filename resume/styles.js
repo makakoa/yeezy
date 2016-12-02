@@ -51,6 +51,10 @@ module.exports = ['style', {
     opacity: 0.001
   },
 
+  '.contact': {
+    color: color.font
+  },
+
   '.redacted': {
     'text-decoration': 'line-through',
     color: 'gray'
