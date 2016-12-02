@@ -1,8 +1,8 @@
 'use strict';
 
-// set to null to redact
-var email = null;
-var phone = null;
+// leave as null to redact
+var email = process.env.PHONE || null;
+var phone = process.env.EMAIL || null;
 
 var util = require('./util');
 
