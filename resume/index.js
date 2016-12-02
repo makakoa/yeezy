@@ -556,7 +556,13 @@ module.exports = [
     ],
 
 
-    ['keywords', keywords]
+    [
+      'keywords',
+      'Hey there! Looks like you found my keywords :) ',
+      'Here\'s all the stuff I couldn\'t fit on the page. ',
+      'Feel free to ask me about any of it! ',
+      keywords
+    ]
 
   ]
 ];

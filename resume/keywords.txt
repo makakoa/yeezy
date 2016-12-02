@@ -28,7 +28,7 @@ Cloudinary
 S3
 Algorithm
 Data Model
-Bioinformatic
+Bioinformatics
 Mining
 Big Data
 Machine

@@ -47,8 +47,8 @@ module.exports = ['style', {
   },
 
   'keywords': {
-    'font-size': '0.1px',
-    opacity: 0.001
+    'font-size': '2px',
+    opacity: 0.01
   },
 
   '.contact': {
