@@ -164,6 +164,13 @@ module.exports = [
         'qr-code': {
           // display: 'block'
         },
+        '#online-tag': {
+          color: 'black',
+          'text-decoration': 'none',
+          opacity: '0.5',
+          'text-align': 'right',
+          display: 'block'
+        },
         'yeezyhtml-tag': {
           display: 'none'
         },
@@ -555,14 +562,21 @@ module.exports = [
       ]
     ],
 
-
     [
       'keywords',
       'Hey there! Looks like you found my keywords :) ',
       'Here\'s all the stuff I couldn\'t fit on the page. ',
       'Feel free to ask me about any of it! ',
       keywords
-    ]
+    ],
 
+    [
+      'a',
+      {
+        id: 'online-tag',
+        href: 'http://cameron-yee.com/resume'
+      },
+      'cameron-yee.com/resume'
+    ]
   ]
 ];

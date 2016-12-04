@@ -168,6 +168,9 @@ module.exports = ['style', {
   '#expandcheck:checked + #expandedlist': {
     display: 'block'
   },
+  '#online-tag': {
+    display: 'none'
+  },
 
   'qr-code': {
     'text-transform': 'lowercase',
