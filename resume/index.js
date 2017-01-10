@@ -20,10 +20,13 @@ var skills = {
 
 var expanded = {
   'Third Party': ['Heroku', 'AWS', 'GoogleAPIs', 'OAuth', 'PubNub'],
-  'DevOps': ['Testing', 'Webpack', 'Make', 'Grunt', 'Gulp'],
+  'DevOps': ['Webpack', 'Make', 'Grunt', 'Gulp', 'Livereload'],
+  'Testing': ['Mocha', 'Chai', 'End-to-End', 'Selenium', 'Nightwatch'],
   'Utility': ['Machine Learning', 'Full-text Search', 'Form Validation',
               'Rich Text Editing', 'Push Notifications'],
-  'Platform': ['Web', 'Mobile Web', 'iOS', 'Android', 'Cloud']
+  'Media': ['Web Audio API', 'WebGL', 'Threejs', 'Aframe', 'AnalyserNode'],
+  'Platform': ['Web', 'Mobile Web', 'iOS', 'Android', 'Cloud'],
+  'Env': ['UNIX', 'Emacs', 'Bash', 'Linux', 'Xcode']
 };
 
 module.exports = [
@@ -262,10 +265,8 @@ module.exports = [
           [
             'left',
             ['position', 'Creator of '],
-            // ['u', 'Creator'],
-            // ' of ',
             ['section-name', 'Flybox'],
-            ['section-description', ' Email Compatible Messaging Platform']
+            ['section-description', ' Email & Messaging Hybrid Platform']
           ],
           [
             'right',
@@ -278,11 +279,12 @@ module.exports = [
         [
           'section-content',
           util.list([
+            // 'Features: Rich Messaging, Email, Profiles, Search & Filter, Composition, Contacts, Animations, Tagging, Invites, Attachments, Embedding',
             'Designed and built SPA from scratch using React with Flux architecture',
             'Constructed REST API with Node and Express backed by a PostgreSQL DB',
-            'Integrated with AWS, GDC, Heroku, PubNub, Gmail',
+            'Integrated with AWS, GDC, Heroku, PubNub, Gmail, Cloudinary',
             'Implemented responsive design and ported app to iOS and Android through Cordova',
-            'Managed DevOps and project management'
+            'Tested End-to-End with Nightwatch, managed DevOps, project management'
           ])
         ]
       ],
@@ -295,8 +297,6 @@ module.exports = [
           [
             'left',
             ['position', 'Engineer at '],
-            // ['u', ' Engineer'],
-            // ' at ',
             ['section-name', 'Nomic'],
             ['section-description', ' Recruiting Platform Startup']
           ],
@@ -333,7 +333,7 @@ module.exports = [
         'section',
         [
           'section-header',
-          ['left', 'Calculus Tutor at University of Washington Learning Center'],
+          ['left', 'Calculus Tutor at University of Washington Instructional Center'],
           ['right', '2011-2013']
         ]
       ]
@@ -343,7 +343,7 @@ module.exports = [
 
     [
       'div',
-      ['h2', 'Projects', util.icon('code-fork')],
+      ['h2', 'Creations', util.icon('code-fork')],
 
       [
         'section',
@@ -381,7 +381,7 @@ module.exports = [
           [
             'left',
             ['section-name', 'Braincryption'],
-            ['section-description', ' Visual Encryption Experiment']
+            ['section-description', ' Visual Encryption']
           ],
           [
             'right',
@@ -407,8 +407,35 @@ module.exports = [
           {style: {'margin-bottom': 0}},
           [
             'left',
+            ['section-name', 'Ekko'],
+            ['section-description', ' Synesthesia Simulator']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://ekko-chamber.herokuapp.com/'
+            }, 'ekko-chamber.herokuapp.com']
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            '3D / VR Audio Visualizer with SoundCloud API',
+            'Aframe, Threejs, WebGL, Web Audio API'
+          ])
+        ]
+      ],
+
+      [
+        'section',
+        {style: {'margin-bottom': '6px'}},
+        [
+          'section-header',
+          {style: {'margin-bottom': 0}},
+          [
+            'left',
             ['section-name', 'The Council'],
-            ['section-description', ' Crowd-sourced Coin Flipping']
+            ['section-description', ' Crowd-Sourced Coin Flipping']
           ],
           [
             'right',
@@ -428,32 +455,33 @@ module.exports = [
         ]
       ],
 
-      [
-        'section',
-        {style: {'margin-bottom': '6px'}},
-        [
-          'section-header',
-          {style: {'margin-bottom': 0}},
-          [
-            'left',
-            ['section-name', 'YeezyHTML'],
-            ['section-description', ' HTML that thinks it\'s JS']
-          ],
-          [
-            'right',
-            ['a', {
-              href: 'https://makakoa.github.io/yeezyhtml/'
-            }, 'makakoa.github.io/yeezyhtml'],
-          ]
-        ],
-        [
-          'section-content',
-          util.list([
-            'JS to static HTML + CSS compiler',
-            'Used to build this resume (source in project page)'
-          ])
-        ]
-      ],
+      // [
+      //   'section',
+      //   {style: {'margin-bottom': '6px'}},
+      //   [
+      //     'section-header',
+      //     {style: {'margin-bottom': 0}},
+      //     [
+      //       'left',
+      //       ['section-name', 'YeezyHTML'],
+      //       ['section-description', ' HTML that thinks it\'s JS']
+      //     ],
+      //     [
+      //       'right',
+      //       ['a', {
+      //         href: 'https://makakoa.github.io/yeezyhtml/'
+      //       }, 'makakoa.github.io/yeezyhtml'],
+      //     ]
+      //   ],
+      //   [
+      //     'section-content',
+      //     util.list([
+      //       'JS to static HTML + CSS compiler '
+      //       + 'used to build this resume (source in project page)'
+      //     ])
+      //   ]
+      // ],
+
       ['span', {
         style: {
           width: '100%',
@@ -462,7 +490,7 @@ module.exports = [
           margin: '8px 0',
           color: 'gray'
         }
-      }, '(Project sources on GitHub)']
+      }, '(More Projects and Sources on GitHub)']
 
     ],
 
@@ -485,7 +513,7 @@ module.exports = [
           'section-header',
           [
             'left',
-            'University of Washing: Bachelor of Science in Neurobiology ',
+            'University of Washington: Bachelor of Science in Neurobiology ',
             ['num', '(3.7)']
           ],
           ['right', '2010 - 2014']

@@ -91,7 +91,7 @@ module.exports = ['style', {
   'header-title': {
     color: '#888888',
     'text-transform': 'uppercase',
-    'letter-spacing': '1px'
+    'letter-spacing': '2px'
   },
 
   header: {
