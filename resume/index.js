@@ -4,7 +4,7 @@ var util = require('./util'),
     fs = require('fs'),
     _ = require('lodash');
 
-var resumePath = './resume/cameron-yee-resume-redacted.pdf';
+var resumePath = 'http://cameron-yee.com/resume/cameron-yee-resume-redacted.pdf';
 
 var keywords = fs.readFileSync('./resume/keywords.txt')
       .toString()
