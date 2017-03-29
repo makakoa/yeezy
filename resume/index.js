@@ -14,7 +14,7 @@ var keywords = fs.readFileSync('./resume/keywords.txt')
 var skills = {
   'General': ['JavaScript', 'Git', 'Java', 'Algorithms', 'Data Models',
               'Code Review'],
-  'Front-end': ['React', 'Flux', 'Angular', 'HTML', 'CSS', 'LESS'],
+  'Front-end': ['React', 'Flux / Redux', 'Angular', 'HTML', 'CSS', 'LESS'],
   'Back-end': ['Node', 'Express', 'REST', 'PostgreSQL', 'MongoDB', 'Auth']
 };
 
@@ -195,12 +195,11 @@ module.exports = [
     'body',
 
     require('./header'),
-    ['br'],
 
     [
       'div',
       {
-        class: 'skills',
+        class: 'skills segment',
         style: {position: 'relative'}
       },
 
@@ -252,10 +251,10 @@ module.exports = [
       }, 'Expand Skills']
 
     ],
-    ['br'],
 
     [
       'div',
+      {class: 'segment'},
       ['h2', 'Work', util.icon('calendar-check-o')],
 
       [
@@ -288,7 +287,60 @@ module.exports = [
           ])
         ]
       ],
-      ['br'],
+
+      [
+        'section',
+        [
+          'section-header',
+          [
+            'left',
+            ['position', 'Engineer for'],
+            ['section-name', ' Unbubble Project'],
+            ['section-description', ' Freelance']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://unbubble.io'
+            }, 'unbubble.io'],
+            ' Feb 2017 - Present'
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'Collaborated on React + Redux hybrid app with JSON RPC API',
+            'Created JavaScript to CSS transpiler with webpack interface'
+          ])
+        ]
+      ],
+
+      [
+        'section',
+        [
+          'section-header',
+          [
+            'left',
+            ['position', 'Engineer for'],
+            ['section-name', ' Placed'],
+            ['section-description', ' Freelance'],
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://placedapp.com'
+            }, 'placedapp.com'],
+            ' Jan 2017 - Present'
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'Collaborated on and maintained resume database recruitment tool',
+            'Reworked and extended o3.js + zoetic web app with resume grid view'
+          ])
+        ]
+      ],
 
       [
         'section',
@@ -318,36 +370,35 @@ module.exports = [
           ])
         ]
       ],
-      ['br'],
 
-      [
-        'section',
-        [
-          'section-header',
-          ['left', 'Bioinformatics Intern at Garmire Lab UHCC'],
-          ['right', 'Summer 2013']
-        ]
-      ],
+      // [
+      //   'section',
+      //   [
+      //     'section-header',
+      //     ['left', 'Bioinformatics Intern at Garmire Lab UHCC'],
+      //     ['right', 'Summer 2013']
+      //   ]
+      // ],
 
-      [
-        'section',
-        [
-          'section-header',
-          ['left', 'Calculus Tutor at University of Washington Instructional Center'],
-          ['right', '2011-2013']
-        ]
-      ]
+      // [
+      //   'section',
+      //   [
+      //     'section-header',
+      //     ['left', 'Calculus Tutor at University of Washington Instructional Center'],
+      //     ['right', '2011-2013']
+      //   ]
+      // ]
 
     ],
-    ['br'],
 
     [
       'div',
+      {class: 'segment'},
+      {style: {position: 'relative'}},
       ['h2', 'Creations', util.icon('code-fork')],
 
       [
         'section',
-        {style: {'margin-bottom': '6px'}},
         [
           'section-header',
           {style: {'margin-bottom': 0}},
@@ -374,7 +425,6 @@ module.exports = [
 
       [
         'section',
-        {style: {'margin-bottom': '6px'}},
         [
           'section-header',
           {style: {'margin-bottom': 0}},
@@ -401,7 +451,6 @@ module.exports = [
 
       [
         'section',
-        {style: {'margin-bottom': '6px'}},
         [
           'section-header',
           {style: {'margin-bottom': 0}},
@@ -426,68 +475,86 @@ module.exports = [
         ]
       ],
 
-      [
-        'section',
-        {style: {'margin-bottom': '6px'}},
-        [
-          'section-header',
-          {style: {'margin-bottom': 0}},
-          [
-            'left',
-            ['section-name', 'The Council'],
-            ['section-description', ' Crowd-Sourced Coin Flipping']
-          ],
-          [
-            'right',
-            ['a', {
-              href: 'http://thecouncil.herokuapp.com'
-            }, 'thecouncil.herokuapp.com'],
-            ' & ',
-            ' on iOS'
-          ]
-        ],
-        [
-          'section-content',
-          util.list([
-            'SPA built with React + Flux on Node + Express + Socket.io API',
-            'Ported app to iOS with Cordova and published on App Store'
-          ])
-        ]
-      ],
-
+      // ['input', {
+      //   id: 'projectsexpanded',
+      //   type: 'checkbox'
+      // }],
       // [
-      //   'section',
-      //   {style: {'margin-bottom': '6px'}},
+      //   'div',
+      //   {id: 'expandedprojects'},
+
       //   [
-      //     'section-header',
-      //     {style: {'margin-bottom': 0}},
+      //     'section',
       //     [
-      //       'left',
-      //       ['section-name', 'YeezyHTML'],
-      //       ['section-description', ' HTML that thinks it\'s JS']
+      //       'section-header',
+      //       {style: {'margin-bottom': 0}},
+      //       [
+      //         'left',
+      //         ['section-name', 'The Council'],
+      //         ['section-description', ' Crowd-Sourced Coin Flipping']
+      //       ],
+      //       [
+      //         'right',
+      //         ['a', {
+      //           href: 'http://thecouncil.herokuapp.com'
+      //         }, 'thecouncil.herokuapp.com'],
+      //         ' & ',
+      //         ' on iOS'
+      //       ]
       //     ],
       //     [
-      //       'right',
-      //       ['a', {
-      //         href: 'https://makakoa.github.io/yeezyhtml/'
-      //       }, 'makakoa.github.io/yeezyhtml'],
+      //       'section-content',
+      //       util.list([
+      //         'SPA built with React + Flux on Node + Express + Socket.io API',
+      //         'Ported app to iOS with Cordova and published on App Store'
+      //       ])
       //     ]
       //   ],
+
       //   [
-      //     'section-content',
-      //     util.list([
-      //       'JS to static HTML + CSS compiler '
-      //       + 'used to build this resume (source in project page)'
-      //     ])
-      //   ]
+      //     'section',
+      //     [
+      //       'section-header',
+      //       {style: {'margin-bottom': 0}},
+      //       [
+      //         'left',
+      //         ['section-name', 'YeezyHTML'],
+      //         ['section-description', ' HTML that thinks it\'s JS']
+      //       ],
+      //       [
+      //         'right',
+      //         ['a', {
+      //           href: 'https://makakoa.github.io/yeezyhtml/'
+      //         }, 'makakoa.github.io/yeezyhtml'],
+      //       ]
+      //     ],
+      //     [
+      //       'section-content',
+      //       util.list([
+      //         'JS to static HTML + CSS compiler '
+      //           + 'used to build this resume (source in project page)'
+      //       ])
+      //     ]
+      //   ],
+        
+      //   ['label', {
+      //     id: 'expandprojects',
+      //     for: 'projectsexpanded'
+      //   }, 'Collapse']
+
       // ],
+
+      // ['label', {
+      //   id: 'expandprojects',
+      //   for: 'projectsexpanded'
+      // }, 'More'],
 
       ['span', {
         style: {
           width: '100%',
           'text-align': 'right',
           display: 'inline-block',
-          margin: '8px 0',
+          margin: '-16px 0 8px',
           color: 'gray'
         }
       }, '(More Projects and Sources on GitHub)']
@@ -496,6 +563,7 @@ module.exports = [
 
     [
       'div',
+      {class: 'segment'},
       ['h2', 'Education', util.icon('graduation-cap')],
 
       [

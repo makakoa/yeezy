@@ -168,6 +168,37 @@ module.exports = ['style', {
   '#expandcheck:checked + #expandedlist': {
     display: 'block'
   },
+
+  '#expandprojects': {
+    // 'font-size': '12px',
+    display: 'inline-block',
+    'box-sizing': 'border-box',
+    margin: '4px 0 0',
+    padding: '4px 8px',
+    'border-radius': '4px',
+    'color': color.blue,
+    cursor: 'pointer',
+    '&:hover': {
+      'text-decoration': 'underline'
+    }
+  },
+  '#projectsexpanded': {
+    display: 'none'
+  },
+  '#expandedprojects': {
+    width: '100%',
+    padding: '10px 0',
+    'background-color': 'white',
+    'border-bottom': '2px solid gray',
+    'z-index': '2',
+    position: 'absolute',
+    display: 'none'
+  },
+  '#projectsexpanded:checked + #expandedprojects': {
+    display: 'block'
+  },
+
+  
   '#online-tag': {
     display: 'none'
   },
@@ -278,7 +309,12 @@ module.exports = ['style', {
     }
   },
 
+  '.segment': {
+    'margin-top': '10px'
+  },
+
   'section': {
+    'margin-bottom': '6px',
     'section-header': {
       'margin-bottom': paddingMinor,
       display: 'flex',
