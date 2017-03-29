@@ -310,7 +310,7 @@ module.exports = ['style', {
   },
 
   '.segment': {
-    'margin-top': '10px'
+    'margin-top': '20px'
   },
 
   'section': {

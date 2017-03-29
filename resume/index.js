@@ -554,6 +554,7 @@ module.exports = [
           width: '100%',
           'text-align': 'right',
           display: 'inline-block',
+          position: 'absolute',
           margin: '-16px 0 8px',
           color: 'gray'
         }
