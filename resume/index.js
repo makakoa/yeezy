@@ -70,8 +70,9 @@ module.exports = [
           padding: 0,
           height: '100vh',
           width: '100vw',
+          '-webkit-overflow-scrolling': 'touch',
           body: {
-            overflow: 'auto',
+            // overflow: 'auto',
             height: 'initial',
             padding: '20px'
           }
@@ -106,6 +107,10 @@ module.exports = [
             'margin-top': '4px',
             padding: '4px'
           }
+        },
+
+        '.segment': {
+          'margin-top': '20px'
         },
 
         'section': {
@@ -296,7 +301,7 @@ module.exports = [
             'left',
             ['position', 'Engineer for'],
             ['section-name', ' Unbubble Project'],
-            ['section-description', ' Freelance']
+            ['section-description', ' - Freelance']
           ],
           [
             'right',
@@ -310,7 +315,8 @@ module.exports = [
           'section-content',
           util.list([
             'Collaborated on React + Redux hybrid app with JSON RPC API',
-            'Created JavaScript to CSS transpiler with webpack interface'
+            'Created build tools such as a JavaScript to CSS transpiler with webpack interface',
+            'Implemented End-to-end testing with Nightwatch'
           ])
         ]
       ],
@@ -323,7 +329,7 @@ module.exports = [
             'left',
             ['position', 'Engineer for'],
             ['section-name', ' Placed'],
-            ['section-description', ' Freelance'],
+            ['section-description', ' - Freelance'],
           ],
           [
             'right',
@@ -363,31 +369,38 @@ module.exports = [
         [
           'section-content',
           util.list([
-            'Collaborated on multiple web and mobile apps built with an in-house framework o2.js',
+            'Collaborated on multiple web and mobile apps built with o2.js and a Node and Express API',
             'Interviewed engineering candidates and onboarded new team members',
-            'Contributed to UI design, app architecture, and project management',
+            'Contributed to UI design, app architecture, tests, and project management',
             'Frequently pair programmed and code reviewed'
           ])
         ]
       ],
 
-      // [
-      //   'section',
-      //   [
-      //     'section-header',
-      //     ['left', 'Bioinformatics Intern at Garmire Lab UHCC'],
-      //     ['right', 'Summer 2013']
-      //   ]
-      // ],
+      [
+        'section',
+        [
+          'section-header',
+          ['left',
+           ['position', 'Bioinformatics Intern'],
+           ['section-description', ' Garmire Lab, UH Cancer Center']
+          ],
+          ['right', 'Summer 2013']
+        ]
+      ],
 
-      // [
-      //   'section',
-      //   [
-      //     'section-header',
-      //     ['left', 'Calculus Tutor at University of Washington Instructional Center'],
-      //     ['right', '2011-2013']
-      //   ]
-      // ]
+      [
+        'section',
+        [
+          'section-header',
+          ['left',
+           ['position', 'Calculus Tutor'],
+           ['section-description',
+            ' University of Washington Instructional Center']
+           ],
+          ['right', '2011-2013']
+        ]
+      ]
 
     ],
 
@@ -410,7 +423,7 @@ module.exports = [
           [
             'right',
             ['a', {
-              href: 'https://enviz.herokuapp.com'
+              href: 'http://lbby.us/enviz'
             }, 'enviz.herokuapp.com']
           ]
         ],
@@ -443,8 +456,9 @@ module.exports = [
         [
           'section-content',
           util.list([
-            'Web App built with Vanilla JavaScript, HTML, and CSS',
-            'Created Supplementary Chrome Extension'
+            'Web App built with Vanilla JavaScript, HTML, and CSS '
+            + 'with custom built fonts',
+            'Created Chrome Extension to extend the app'
           ])
         ]
       ],
@@ -462,14 +476,14 @@ module.exports = [
           [
             'right',
             ['a', {
-              href: 'https://ekko-chamber.herokuapp.com/'
+              href: 'http://lbby.us/ekko-chamber'
             }, 'ekko-chamber.herokuapp.com']
           ]
         ],
         [
           'section-content',
           util.list([
-            '3D / VR Audio Visualizer with SoundCloud API',
+            '3D / VR Audio Visualizer with SoundCloud API using ' +
             'Aframe, Threejs, WebGL, Web Audio API'
           ])
         ]
@@ -555,10 +569,15 @@ module.exports = [
           'text-align': 'right',
           display: 'inline-block',
           position: 'absolute',
-          margin: '-16px 0 8px',
+          margin: '0 0 8px',
           color: 'gray'
         }
-      }, '(More Projects and Sources on GitHub)']
+      }, '(More Projects and Sources ',
+       ['a', {style: {
+         'text-decoration': 'none',
+         color: 'inherit'
+       }, href: 'https://github.com/makakoa'}, 'on GitHub)']
+      ]
 
     ],
 
@@ -571,7 +590,7 @@ module.exports = [
         'section',
         [
           'section-header',
-          ['left', 'Code Fellows: Certificate of Full-Stack JavaScript'],
+          ['left', 'Code Fellows: Full-Stack JavaScript'],
           ['right', 'Fall 2014']
         ]
       ],

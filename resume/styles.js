@@ -47,6 +47,7 @@ module.exports = ['style', {
   },
 
   'keywords': {
+    'margin-top': '-20px', // so page spacing is less impacted
     'font-size': '2px',
     opacity: 0.01
   },
@@ -310,7 +311,7 @@ module.exports = ['style', {
   },
 
   '.segment': {
-    'margin-top': '20px'
+    // 'margin-top': '20px'
   },
 
   'section': {
