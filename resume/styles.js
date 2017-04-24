@@ -159,14 +159,27 @@ module.exports = ['style', {
   },
   '#expandedlist': {
     width: '100%',
-    padding: '10px 0',
+    padding: '10px 8px',
+    'margin-left': '-8px',
     'background-color': 'white',
-    'border-bottom': '2px solid gray',
+    'border': '1px solid #ccc',
+    'border-top': 'none',
+    'border-bottom-left-radius': '4px',
+    'border-bottom-right-radius': '4px',
+    'box-shadow': '0 10px 30px -10px gray',
     'z-index': '2',
     position: 'absolute',
-    display: 'none'
+    'z-index': '-1',
+    opacity: 0,
+    transition: '500ms',
+    // display: 'none',
+    '#expandskills': {
+      color: '#e33'
+    }
   },
   '#expandcheck:checked + #expandedlist': {
+    'z-index': '1',
+    opacity: 1,
     display: 'block'
   },
 

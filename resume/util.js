@@ -21,3 +21,9 @@ expose(icon);
 function icon(name) {
   return ['i', {class: 'fa fa-' + name}];
 }
+
+expose(inlineScript);
+function inlineScript(fn) {
+  return ['script', fn.toString().slice(13, -1)];
+}
+

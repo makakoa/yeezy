@@ -42,6 +42,21 @@ module.exports = [
         + 'maximum-scale=1, user-scalable=no'
     }],
 
+    util.inlineScript(function() {
+      console.log('Hey! Looking for this?');
+      console.log('https://github.com/makakoa/yeezyhtml/tree/master/resume');
+    }),
+
+    util.inlineScript(function() {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-58308025-1', 'auto');
+      ga('send', 'pageview');
+    }),
+
 
     ['link', {
       rel: 'icon',
@@ -101,11 +116,22 @@ module.exports = [
         },
 
         'header': {
+          'h1': {
+            'font-size': '36px'
+          },
+          'header-title': {
+            'letter-spacing': '1px',
+            'font-size': '14px'
+          },
           'text-align': 'center',
           'flex-direction': 'column',
           '.header-info-item': {
-            'margin-top': '4px',
+            'margin-top': '8px',
             padding: '4px'
+          },
+          'a.header-info-item': {
+            'border-radius': '4px',
+            'border': '1px solid #ddd'
           }
         },
 
