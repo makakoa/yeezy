@@ -1,8 +1,8 @@
 'use strict';
 
 // leave as null to redact
-var email = process.env.PHONE || null;
-var phone = process.env.EMAIL || null;
+var email = 'makakoa57@gmail.com' || process.env.EMAIL || null;
+var phone = process.env.PHONE || null;
 
 var util = require('./util');
 
@@ -14,7 +14,7 @@ module.exports = [
      'Cameron ',
      [
        'span',
-       {style: {color: '#4279ff'}},
+       {id: 'last-name'},
        'Yee'
      ]
    ],
@@ -27,7 +27,7 @@ module.exports = [
       id: 'phone-link',
       class: [
         'header-info-item',
-        phone ? 'contact' : ''
+        'contact'
       ].join(' '),
       href: 'tel:' + phone
     }, util.icon('phone'),

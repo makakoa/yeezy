@@ -1,5 +1,2 @@
-# yeezyhtml
-_JS HTML_
-
-Yeezy to read.
-Yeezy to write.
+# yeezy.js
+Yeezy to read. Yeezy to write.
