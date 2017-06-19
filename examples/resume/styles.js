@@ -3,6 +3,7 @@
 var paddingMinor = '6px';
 
 var color = {
+  accent: '#4279ff',
   border: '#bbbbbb',
   gray: '#777777',
   blue: '#4279ff',
@@ -30,7 +31,7 @@ module.exports = ['style', {
       height: '100%',
       'margin': '0',
 
-      'font-family': '"Raleway"',
+      'font-family': '"Nunito"',
       color: color.font,
       'box-sizing': 'border-box',
       padding: '8%',        // 1" / 8.5" = ~11.76% standard resume margin
@@ -96,6 +97,9 @@ module.exports = ['style', {
   },
 
   header: {
+    '#last-name': {
+      color: color.accent
+    },
     'flex-shrink': '0',
     display: 'flex',
     'justify-content': 'space-between',
@@ -330,20 +334,38 @@ module.exports = ['style', {
   'section': {
     'margin-bottom': '6px',
     'section-header': {
-      'margin-bottom': paddingMinor,
+      'margin-bottom': '2px',
       display: 'flex',
       'justify-content': 'space-between',
 
       'position': {
-        color: color.blue
+        'font-size': '16px',
+        color: color.accent
       },
 
       'section-name': {
-        'font-size': '18px',
-        color: color.blue
+        'font-size': '16px',
+        color: color.accent
       },
       'section-description': {
+        // 'font-size': '16px',
         color: color.gray
+      },
+      'right': {
+        a: {
+          'margin-right': '6px',
+          display: 'inline-flex',
+          'align-items': 'center',
+          'text-decoration': 'none',
+          'i.fa-link': {
+            display: 'none',
+            'margin-right': '4px',
+            'font-size': '10px'
+          },
+          '&:hover': {
+            'border-bottom': '1px solid'
+          }
+        }
       }
     }
   }

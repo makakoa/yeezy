@@ -1,5 +1,5 @@
 {
-  "name": "yeezyhtml",
+  "name": "yeezy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/makakoa/yeezyhtml.git"
   },
-  "author": "",
+  "author": "Cameron Yee <makakoa57@gmail.com> ",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/makakoa/yeezyhtml/issues"

@@ -4,7 +4,7 @@ var util = require('./util'),
     fs = require('fs'),
     _ = require('lodash');
 
-var resumePath = 'http://cameron-yee.com/resume/cameron-yee-resume-redacted.pdf';
+var resumePath = 'http://cameron-yee.com/resume/cameron-yee-resume.pdf';
 
 var keywords = fs.readFileSync('./resume/keywords.txt')
       .toString()
@@ -12,10 +12,10 @@ var keywords = fs.readFileSync('./resume/keywords.txt')
       .join(' ');
 
 var skills = {
-  'General': ['JavaScript', 'Git', 'Java', 'Algorithms', 'Data Models',
-              'Code Review'],
-  'Front-end': ['React', 'Flux / Redux', 'Angular', 'HTML', 'CSS', 'LESS'],
-  'Back-end': ['Node', 'Express', 'REST', 'PostgreSQL', 'MongoDB', 'Auth']
+  'General': ['JavaScript', 'Git', 'Algorithms', 'Data Models',
+              'Code Review', 'Pair Programming'],
+  'Front-end': ['React', 'Flux / Redux', 'HTML', 'CSS', 'Responsive', 'UX Design'],
+  'Back-end': ['Node', 'Express / REST', 'PostgreSQL', 'Auth', 'Sockets', 'RPC']
 };
 
 var expanded = {
@@ -70,7 +70,7 @@ module.exports = [
     }],
 
     ['link', {
-      href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,600',
+      href: 'https://fonts.googleapis.com/css?family=Nunito:300,400,600',
       rel: 'stylesheet'
     }],
 
@@ -215,7 +215,8 @@ module.exports = [
         'section-header': {
           'a': {
             'text-decoration': 'none',
-            'border-bottom': '1px solid rgba(66,121,255,0.5)' // better on pdf
+            // 'border-bottom': '1px solid rgba(66,121,255,0.5)' // better on pdf
+            'border-bottom': 'none'
           }
         }
       }
@@ -234,7 +235,7 @@ module.exports = [
         style: {position: 'relative'}
       },
 
-      ['h2', 'Skills', util.icon('code')],
+      ['h2', 'Programming', util.icon('code')],
 
       [
         'table',
@@ -302,7 +303,7 @@ module.exports = [
             'right',
             ['a', {
               href: 'https://alpha.flybox.online/about'
-            }, 'flybox.online'],
+            }, util.icon('link'), ' flybox.online'],
             ' July 2016 - Present'
           ]
         ],
@@ -310,11 +311,11 @@ module.exports = [
           'section-content',
           util.list([
             // 'Features: Rich Messaging, Email, Profiles, Search & Filter, Composition, Contacts, Animations, Tagging, Invites, Attachments, Embedding',
-            'Designed and built SPA from scratch using React with Flux architecture',
-            'Constructed REST API with Node and Express backed by a PostgreSQL DB',
-            'Integrated with AWS, GDC, Heroku, PubNub, Gmail, Cloudinary',
-            'Implemented responsive design and ported app to iOS and Android through Cordova',
-            'Tested End-to-End with Nightwatch, managed DevOps, project management'
+            'Designed and built responsive SPA in React for desktop web, mobile web, iOS, and Android',
+            'Constructed Node API with PubNub for push notifications and real-time updates between clients',
+            'Architected data model and synchronization logistics for an email compatible message platform',
+            'Programmed mock third party APIs for realistic End-to-End testing with Nightwatch.js',
+            'Leveraged AWS S3 to replace email attachments with secure file hosting feature'
           ])
         ]
       ],
@@ -325,24 +326,23 @@ module.exports = [
           'section-header',
           [
             'left',
-            ['position', 'Engineer for'],
+            ['position', 'Freelance Engineer for'],
             ['section-name', ' Unbubble Project'],
-            ['section-description', ' - Freelance']
+            ['section-description', ' Political Social Network']
           ],
           [
             'right',
             ['a', {
               href: 'https://unbubble.io'
-            }, 'unbubble.io'],
+            }, util.icon('link'), ' unbubble.io'],
             ' Feb 2017 - Present'
           ]
         ],
         [
           'section-content',
           util.list([
-            'Collaborated on React + Redux hybrid app with JSON RPC API',
-            'Created build tools such as a JavaScript to CSS transpiler with webpack interface',
-            'Implemented End-to-end testing with Nightwatch'
+            'Created powerful React sugar library to accelerate and simplify development of a hybrid SPA',
+            'Built lightweight JS to CSS transpiler with PostCSS integration and flexible media query handles'
           ])
         ]
       ],
@@ -353,23 +353,23 @@ module.exports = [
           'section-header',
           [
             'left',
-            ['position', 'Engineer for'],
-            ['section-name', ' Placed'],
-            ['section-description', ' - Freelance'],
+            ['position', 'Freelance Engineer for'],
+            ['section-name', ' Placed App'],
+            ['section-description', ' Recruiter Tool'],
           ],
           [
             'right',
             ['a', {
               href: 'https://placedapp.com'
-            }, 'placedapp.com'],
+            }, util.icon('link'), ' placedapp.com'],
             ' Jan 2017 - Present'
           ]
         ],
         [
           'section-content',
           util.list([
-            'Collaborated on and maintained resume database recruitment tool',
-            'Reworked and extended o3.js + zoetic web app with resume grid view'
+            'Extended web app created with a home rolled reactive framework to have dual mode resume browsing',
+            'Maintained Python machine learning algorithm for classifying attachments as resumes'
           ])
         ]
       ],
@@ -388,17 +388,16 @@ module.exports = [
             'right',
             ['a', {
               href: 'https://nomic.com'
-            }, 'nomic.com'],
+            }, util.icon('link'), ' nomic.com'],
             ' April 2015 - July 2016'
           ]
         ],
         [
           'section-content',
           util.list([
-            'Collaborated on multiple web and mobile apps built with o2.js and a Node and Express API',
-            'Interviewed engineering candidates and onboarded new team members',
-            'Contributed to UI design, app architecture, tests, and project management',
-            'Frequently pair programmed and code reviewed'
+            'Owned internal tool development and collaborated on multiple web apps built with reactive framework',
+            'Made contributions to UI and feature design for handling recruiting candidate pipelines',
+            'Interviewed and lead new hires through onboarding, pair programming, and code review'
           ])
         ]
       ],
@@ -408,12 +407,20 @@ module.exports = [
         [
           'section-header',
           ['left',
-           ['position', 'Bioinformatics Intern'],
-           ['section-description', ' Garmire Lab, UH Cancer Center']
+           ['position', 'Research Assistant in'],
+           ['section-name', ' Garmire Lab'],
+           ['section-description', ' Bioinformatics Lab']
           ],
-          ['right', 'Summer 2013']
+          ['right', 'May 2013 - August 2013']
+        ],
+        [
+          'section-content',
+          util.list([
+            'Co-authored pilot study to find correlations between breast cancer subtypes and genes of interest',
+            'Programmed algorithms in R and Perl to run statistical tests to find correlations in genomic data'
+          ])
         ]
-      ],
+    ],
 
       [
         'section',
@@ -444,7 +451,7 @@ module.exports = [
           [
             'left',
             ['section-name', 'Enviz'],
-            ['section-description', ' Intelligent Image Feed']
+            ['section-description', ' Machine Learning Powered Image Feed']
           ],
           [
             'right',
@@ -452,13 +459,13 @@ module.exports = [
               href: 'http://lbby.us/enviz'
             }, 'enviz.herokuapp.com']
           ]
-        ],
-        [
-          'section-content',
-          util.list([
-            'SPA built with React + Flux on a Node + Express API, uses Imgur OAuth',
-            'Uses a deep convolutional neural network to model and predict image preferences'
-          ])
+        // ],
+        // [
+        //   'section-content',
+        //   util.list([
+        //     'SPA built with React + Flux on a Node + Express API, uses Imgur OAuth',
+        //     'Uses a deep convolutional neural network to model and predict image preferences'
+        //   ])
         ]
       ],
 
@@ -470,7 +477,7 @@ module.exports = [
           [
             'left',
             ['section-name', 'Braincryption'],
-            ['section-description', ' Visual Encryption']
+            ['section-description', ' Software Driven Visual Encryption']
           ],
           [
             'right',
@@ -478,14 +485,14 @@ module.exports = [
               href: 'http://makakoa.github.io/braincryption/app/'
             }, 'makakoa.github.io/braincryption/app']
           ]
-        ],
-        [
-          'section-content',
-          util.list([
-            'Web App built with Vanilla JavaScript, HTML, and CSS '
-            + 'with custom built fonts',
-            'Created Chrome Extension to extend the app'
-          ])
+        // ],
+        // [
+        //   'section-content',
+        //   util.list([
+        //     'Web App built with Vanilla JavaScript, HTML, and CSS '
+        //     + 'with custom built fonts',
+        //     'Created Chrome Extension to extend the app'
+        //   ])
         ]
       ],
 
@@ -497,7 +504,7 @@ module.exports = [
           [
             'left',
             ['section-name', 'Ekko'],
-            ['section-description', ' Synesthesia Simulator']
+            ['section-description', ' Synesthesia Simulator (VR Audio Visualizer)']
           ],
           [
             'right',
@@ -505,15 +512,34 @@ module.exports = [
               href: 'http://lbby.us/ekko-chamber'
             }, 'ekko-chamber.herokuapp.com']
           ]
-        ],
-        [
-          'section-content',
-          util.list([
-            '3D / VR Audio Visualizer with SoundCloud API using ' +
-            'Aframe, Threejs, WebGL, Web Audio API'
-          ])
+        // ],
+        // [
+        //   'section-content',
+        //   util.list([
+        //     '3D / VR Audio Visualizer with SoundCloud API using ' +
+        //     'Aframe, Threejs, WebGL, Web Audio API'
+        //   ])
         ]
       ],
+
+      [
+        'section',
+        [
+          'section-header',
+          {style: {'margin-bottom': 0}},
+          [
+            'left',
+            ['section-name', 'Banger Management'],
+            ['section-description', ' Real-time Top-down Web Game']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'http://lbby.us/banger-mgmt'
+            }, 'banger-mgmt.herokuapp.com']
+          ]
+        ]
+      ],      
 
       // ['input', {
       //   id: 'projectsexpanded',
