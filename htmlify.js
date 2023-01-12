@@ -4,23 +4,23 @@ var _ = require('lodash'),
 
 function isYeezyEl(arr) {
   var tag = _.first(arr);
-  return Array.isArray(arr) && tag && _.isString(tag) && tag.startsWith(':');
+  return Array.isArray(arr) && tag && _.isString(tag); // && tag.startsWith(':');
 }
 
 // Yeezy array to html
 function htmlify(arr) {
   if(!isYeezyEl(arr)) throw new Error('Illegal Format: ' + JSON.stringify(arr));
   if (!arr.length) return '';
-  
-  // Special els
-  if (tag === ':style') return elementify('style', null, cssify(arr[0]));
-  if (tag === ':script') {
-    if (arr.length > 1) throw new Error('Scripts can only have one argument');
-    return elementify('script', null, util.inlineScript(arr[0]));
-  }
 
   // Initiate element data
   var tag = arr.shift(), attributes = {}, children = [];
+
+  // Special els
+  if (tag === 'style') return elementify('style', null, cssify(arr[0]));
+  if (tag === 'script') {
+    if (arr.length > 1) throw new Error('Scripts can only have one argument');
+    return elementify('script', null, arr[0]);
+  }
 
   // Sort children
   while (arr.length) {
@@ -38,7 +38,7 @@ function htmlify(arr) {
     }
   }
 
-  return elementify(tag.slice(1), attributeify(attributes), children.join(''));
+  return elementify(tag, attributeify(attributes), children.join(''));
 };
 
 var unpaired = {
@@ -57,7 +57,7 @@ function elementify(tag, atts, content) {
 // Attribute strings from objects
 function attributeify(atts) {
   return _.reduce(atts, function(s, v, k) {
-    if (k === 'style') v = util.inlineStyleify(v);
+    if (k === 'style') v = util.inlineStyle(v);
     return s += [' ', k, '="', v, '"'].join('');
   }, '') || '';
 }
