@@ -295,6 +295,35 @@ module.exports = [
           'section-header',
           [
             'left',
+            ['position', 'Software Engineer at '],
+            ['section-name', 'Meta'],
+            ['section-description', ' Instagram and Facebook Web']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://www.instagram.com'
+            }, util.icon('link'), ' instagram.com'],
+            ' July 2017 - Present'
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'migration',
+            'facebook web rewrite',
+            'rendering reliability',
+            'e2e testing'
+          ])
+        ]
+      ],      
+
+      [
+        'section',
+        [
+          'section-header',
+          [
+            'left',
             ['position', 'Creator of '],
             ['section-name', 'Flybox'],
             ['section-description', ' Email & Messaging Hybrid Platform']
@@ -304,7 +333,7 @@ module.exports = [
             ['a', {
               href: 'https://alpha.flybox.online/about'
             }, util.icon('link'), ' flybox.online'],
-            ' July 2016 - Present'
+            ' July 2016 - July 2017'
           ]
         ],
         [
@@ -335,7 +364,7 @@ module.exports = [
             ['a', {
               href: 'https://unbubble.io'
             }, util.icon('link'), ' unbubble.io'],
-            ' Feb 2017 - Present'
+            ' Feb 2017 - July 2017'
           ]
         ],
         [
@@ -362,7 +391,7 @@ module.exports = [
             ['a', {
               href: 'https://placedapp.com'
             }, util.icon('link'), ' placedapp.com'],
-            ' Jan 2017 - Present'
+            ' Jan 2017 - July 2017'
           ]
         ],
         [
@@ -411,7 +440,11 @@ module.exports = [
            ['section-name', ' Garmire Lab'],
            ['section-description', ' Bioinformatics Lab']
           ],
-          ['right', 'May 2013 - August 2013']
+          ['right', 
+          ['a', {
+            href: 'https://www.semanticscholar.org/paper/A-Novel-Model-to-Combine-Clinical-and-Pathway-Based-Huang-Yee/0bedf2d957d7e1290a15c38b3225b301fe18639d'
+          }, util.icon('link')],
+          'May 2013 - August 2013']
         ],
         [
           'section-content',
@@ -442,6 +475,25 @@ module.exports = [
       {class: 'segment'},
       {style: {position: 'relative'}},
       ['h2', 'Creations', util.icon('code-fork')],
+
+      [
+        'section',
+        [
+          'section-header',
+          {style: {'margin-bottom': 0}},
+          [
+            'left',
+            ['section-name', 'Vyz'],
+            ['section-description', ' MacOS Music Visualizer']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://github.com/makakoa/vyz'
+            }, 'github.com/makakoa/vyz']
+          ]
+        ]
+      ],    
 
       [
         'section',

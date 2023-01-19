@@ -49,15 +49,15 @@ module.exports = [
      }, email || 'email@example.com']],
     ['span', {
       class: 'header-info-item'
-    }, util.icon('map-marker'), 'San Francisco, CA']
+    }, util.icon('map-marker'), 'New York, NY']
   ],
 
   [
     'right',
     ['a', {
       class: 'header-info-item',
-      href: 'http://cameron-yee.com'
-    }, util.icon('home'), 'cameron-yee.com'],
+      href: 'https://makakoa.github.io/website/'
+    }, util.icon('home'), 'makakoa.github.io/website/'],
     ['a', {
       class: 'header-info-item',
       href: 'https://github.com/makakoa'

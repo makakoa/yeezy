@@ -19,7 +19,7 @@ function htmlify(arr) {
   if (tag === 'style') return elementify('style', null, cssify(arr[0]));
   if (tag === 'script') {
     if (arr.length > 1) throw new Error('Scripts can only have one argument');
-    return elementify('script', null, arr[0]);
+    return _.isObject(arr[0]) ? elementify('script', attributeify(arr[0], null)) : elementify('script', null, arr[0]);
   }
 
   // Sort children
