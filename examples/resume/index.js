@@ -29,6 +29,14 @@ var expanded = {
   'Env': ['UNIX', 'Emacs', 'Bash', 'Linux', 'Xcode']
 };
 
+var brokenLink = {
+  style: {
+    color: 'gray',
+    opacity: '50%',
+    'pointer-events': 'none',
+  }
+};
+
 module.exports = [
   'html',
   [
@@ -295,6 +303,38 @@ module.exports = [
           'section-header',
           [
             'left',
+            ['position', 'Software Engineer at '],
+            ['section-name', 'Meta'],
+            ['section-description', ' Instagram and Facebook Web']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://www.instagram.com'
+            }, util.icon('link'), ' instagram.com'],
+            // ['a', {
+            //   href: 'https://www.facebook.com'
+            // }, util.icon('link'), ' facebook.com'],
+            ' July 2017 - Feb 2023'
+          ]
+        ],
+        [
+          'section-content',
+          util.list([
+            'Lead Web App migration moving Instagram Web App from a Django to HHVM server',
+            'Drove facebook web ad rendering and testing efforts increasing web revenue by 10%+',
+            'Lead rewrite of comment interface on web to React as precursor to the facebook website React rewrite',
+            'Coordinated and communicated across dozens of stakeholders and product teams'
+          ])
+        ]
+      ],
+
+      [
+        'section',
+        [
+          'section-header',
+          [
+            'left',
             ['position', 'Creator of '],
             ['section-name', 'Flybox'],
             ['section-description', ' Email & Messaging Hybrid Platform']
@@ -302,9 +342,10 @@ module.exports = [
           [
             'right',
             ['a', {
+              ...brokenLink,
               href: 'https://alpha.flybox.online/about'
             }, util.icon('link'), ' flybox.online'],
-            ' July 2016 - Present'
+            ' July 2016 - July 2017'
           ]
         ],
         [
@@ -326,67 +367,74 @@ module.exports = [
           'section-header',
           [
             'left',
-            ['position', 'Freelance Engineer for'],
-            ['section-name', ' Unbubble Project'],
-            ['section-description', ' Political Social Network']
+            ['position', 'Freelance Engineer'],
+            ['section-description', ' Unbubble Project and Placed App']
           ],
           [
             'right',
             ['a', {
+              ...brokenLink,
               href: 'https://unbubble.io'
             }, util.icon('link'), ' unbubble.io'],
-            ' Feb 2017 - Present'
+            ['a', {
+              ...brokenLink,
+              href: 'https://placedapp.com'
+            }, util.icon('link'), ' placedapp.com'],
+            ' Jan 2017 - July 2017'
           ]
         ],
         [
           'section-content',
           util.list([
             'Created powerful React sugar library to accelerate and simplify development of a hybrid SPA',
-            'Built lightweight JS to CSS transpiler with PostCSS integration and flexible media query handles'
-          ])
-        ]
-      ],
-
-      [
-        'section',
-        [
-          'section-header',
-          [
-            'left',
-            ['position', 'Freelance Engineer for'],
-            ['section-name', ' Placed App'],
-            ['section-description', ' Recruiter Tool'],
-          ],
-          [
-            'right',
-            ['a', {
-              href: 'https://placedapp.com'
-            }, util.icon('link'), ' placedapp.com'],
-            ' Jan 2017 - Present'
-          ]
-        ],
-        [
-          'section-content',
-          util.list([
+            'Built lightweight JS to CSS transpiler with PostCSS integration and flexible media query handles',
             'Extended web app created with a home rolled reactive framework to have dual mode resume browsing',
             'Maintained Python machine learning algorithm for classifying attachments as resumes'
           ])
         ]
       ],
 
+      // [
+      //   'section',
+      //   [
+      //     'section-header',
+      //     [
+      //       'left',
+      //       ['position', 'Freelance Engineer for'],
+      //       ['section-name', ' Placed App'],
+      //       ['section-description', ' Recruiter Tool'],
+      //     ],
+      //     [
+      //       'right',
+      //       ['a', {
+      //         href: 'https://placedapp.com'
+      //       }, util.icon('link'), ' placedapp.com'],
+      //       ' Jan 2017 - July 2017'
+      //     ]
+      //   ],
+      //   [
+      //     'section-content',
+      //     util.list([
+      //       'Extended web app created with a home rolled reactive framework to have dual mode resume browsing',
+      //       'Maintained Python machine learning algorithm for classifying attachments as resumes'
+      //     ])
+      //   ]
+      // ],
+
       [
         'section',
         [
           'section-header',
           [
             'left',
-            ['position', 'Engineer at '],
+            ['position', 'Software Engineer at '],
             ['section-name', 'Nomic'],
             ['section-description', ' Recruiting Platform Startup']
           ],
           [
             'right',
             ['a', {
+              ...brokenLink,
               href: 'https://nomic.com'
             }, util.icon('link'), ' nomic.com'],
             ' April 2015 - July 2016'
@@ -411,7 +459,11 @@ module.exports = [
            ['section-name', ' Garmire Lab'],
            ['section-description', ' Bioinformatics Lab']
           ],
-          ['right', 'May 2013 - August 2013']
+          ['right', 
+          ['a', {
+            href: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003851'
+          }, util.icon('link'), 'PLOS'],
+          'May 2013 - August 2013']
         ],
         [
           'section-content',
@@ -420,20 +472,20 @@ module.exports = [
             'Programmed algorithms in R and Perl to run statistical tests to find correlations in genomic data'
           ])
         ]
-    ],
+    ]
 
-      [
-        'section',
-        [
-          'section-header',
-          ['left',
-           ['position', 'Calculus Tutor'],
-           ['section-description',
-            ' University of Washington Instructional Center']
-           ],
-          ['right', '2011-2013']
-        ]
-      ]
+      // [
+      //   'section',
+      //   [
+      //     'section-header',
+      //     ['left',
+      //      ['position', 'Calculus Tutor'],
+      //      ['section-description',
+      //       ' University of Washington Instructional Center']
+      //      ],
+      //     ['right', '2011-2013']
+      //   ]
+      // ]
 
     ],
 
@@ -442,6 +494,25 @@ module.exports = [
       {class: 'segment'},
       {style: {position: 'relative'}},
       ['h2', 'Creations', util.icon('code-fork')],
+
+      [
+        'section',
+        [
+          'section-header',
+          {style: {'margin-bottom': 0}},
+          [
+            'left',
+            ['section-name', 'Vyz'],
+            ['section-description', ' MacOS Music Visualizer']
+          ],
+          [
+            'right',
+            ['a', {
+              href: 'https://github.com/makakoa/vyz'
+            }, 'github.com/makakoa/vyz']
+          ]
+        ]
+      ],    
 
       [
         'section',
@@ -496,50 +567,50 @@ module.exports = [
         ]
       ],
 
-      [
-        'section',
-        [
-          'section-header',
-          {style: {'margin-bottom': 0}},
-          [
-            'left',
-            ['section-name', 'Ekko'],
-            ['section-description', ' Synesthesia Simulator (VR Audio Visualizer)']
-          ],
-          [
-            'right',
-            ['a', {
-              href: 'http://lbby.us/ekko-chamber'
-            }, 'ekko-chamber.herokuapp.com']
-          ]
-        // ],
-        // [
-        //   'section-content',
-        //   util.list([
-        //     '3D / VR Audio Visualizer with SoundCloud API using ' +
-        //     'Aframe, Threejs, WebGL, Web Audio API'
-        //   ])
-        ]
-      ],
+      // [
+      //   'section',
+      //   [
+      //     'section-header',
+      //     {style: {'margin-bottom': 0}},
+      //     [
+      //       'left',
+      //       ['section-name', 'Ekko'],
+      //       ['section-description', ' Synesthesia Simulator (VR Audio Visualizer)']
+      //     ],
+      //     [
+      //       'right',
+      //       ['a', {
+      //         href: 'http://lbby.us/ekko-chamber'
+      //       }, 'ekko-chamber.herokuapp.com']
+      //     ]
+      //   // ],
+      //   // [
+      //   //   'section-content',
+      //   //   util.list([
+      //   //     '3D / VR Audio Visualizer with SoundCloud API using ' +
+      //   //     'Aframe, Threejs, WebGL, Web Audio API'
+      //   //   ])
+      //   ]
+      // ],
 
-      [
-        'section',
-        [
-          'section-header',
-          {style: {'margin-bottom': 0}},
-          [
-            'left',
-            ['section-name', 'Banger Management'],
-            ['section-description', ' Real-time Top-down Web Game']
-          ],
-          [
-            'right',
-            ['a', {
-              href: 'http://lbby.us/banger-mgmt'
-            }, 'banger-mgmt.herokuapp.com']
-          ]
-        ]
-      ],      
+      // [
+      //   'section',
+      //   [
+      //     'section-header',
+      //     {style: {'margin-bottom': 0}},
+      //     [
+      //       'left',
+      //       ['section-name', 'Banger Management'],
+      //       ['section-description', ' Real-time Top-down Web Game']
+      //     ],
+      //     [
+      //       'right',
+      //       ['a', {
+      //         href: 'http://lbby.us/banger-mgmt'
+      //       }, 'banger-mgmt.herokuapp.com']
+      //     ]
+      //   ]
+      // ],      
 
       // ['input', {
       //   id: 'projectsexpanded',
