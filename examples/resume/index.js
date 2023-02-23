@@ -4,7 +4,7 @@ var util = require('./util'),
     fs = require('fs'),
     _ = require('lodash');
 
-var resumePath = 'https://makakoa.github.io/website/resume/resume/cameron-yee-resume.pdf';
+var resumePath = 'https://makakoa.github.io/website/resume/resume/cameron-yee-resume-redacted.pdf';
 var webResumeURL = 'https://makakoa.github.io/website/resume/';
 var webResumeText = 'makakoa.github.io/website/resume';
 
