@@ -12,9 +12,9 @@ var keywords = fs.readFileSync('./resume/keywords.txt')
       .join(' ');
 
 var skills = {
-  'General': ['JavaScript', 'Git', 'Algorithms', 'Data Models',
-              'Code Review', 'Pair Programming'],
-  'Front-end': ['React', 'Flux / Redux', 'HTML', 'CSS', 'Responsive', 'UX Design'],
+  'General': ['JavaScript', 'Python',
+              'PHP / Hack', 'Git', 'Mercurial', 'ML'],
+  'Front-end': ['React', 'Flux / Redux', 'Relay', 'GraphQL', 'HTML', 'CSS'],
   'Back-end': ['Node', 'Express / REST', 'PostgreSQL', 'Auth', 'Sockets', 'RPC']
 };
 
@@ -200,6 +200,9 @@ module.exports = [
             width: '100%'
           }
         },
+        'h2': {
+          'margin-top': '8px'
+        },
         '#expandskills': {
           display: 'none'
         },
@@ -321,10 +324,11 @@ module.exports = [
         [
           'section-content',
           util.list([
-            'Lead Web App migration moving Instagram Web App from a Django to HHVM server',
-            'Drove facebook web ad rendering and testing efforts increasing web revenue by 10%+',
-            'Lead rewrite of comment interface on web to React as precursor to the facebook website React rewrite',
-            'Coordinated and communicated across dozens of stakeholders and product teams'
+            'Lead dozens of engineers on consolidation of Instagram Web and Facebook Web Infrastructure',
+            'Drove facebook web ad rendering and testing efforts increasing web revenue by 10%+ ($100Ms)',
+            'Ran completion of web comment interface rewrite as precursor to the facebook.com React rewrite',
+            'Developed insights and analyses and coordinated across dozens of stakeholders and teams',
+            'Pioneered engineering culture on Instagram Web and steered company DEI club Mixed@'
           ])
         ]
       ],
@@ -355,7 +359,7 @@ module.exports = [
             'Designed and built responsive SPA in React for desktop web, mobile web, iOS, and Android',
             'Constructed Node API with PubNub for push notifications and real-time updates between clients',
             'Architected data model and synchronization logistics for an email compatible message platform',
-            'Programmed mock third party APIs for realistic End-to-End testing with Nightwatch.js',
+            // 'Programmed mock third party APIs for realistic End-to-End testing with Nightwatch.js',
             'Leveraged AWS S3 to replace email attachments with secure file hosting feature'
           ])
         ]
@@ -388,7 +392,7 @@ module.exports = [
           util.list([
             'Created powerful React sugar library to accelerate and simplify development of a hybrid SPA',
             'Built lightweight JS to CSS transpiler with PostCSS integration and flexible media query handles',
-            'Extended web app created with a home rolled reactive framework to have dual mode resume browsing',
+            'Extended web app created with a home rolled reactive framework for dual mode resume browsing',
             'Maintained Python machine learning algorithm for classifying attachments as resumes'
           ])
         ]
@@ -443,7 +447,7 @@ module.exports = [
         [
           'section-content',
           util.list([
-            'Owned internal tool development and collaborated on multiple web apps built with reactive framework',
+            'Owned internal tool development and worked on multiple web apps built with reactive framework',
             'Made contributions to UI and feature design for handling recruiting candidate pipelines',
             'Interviewed and lead new hires through onboarding, pair programming, and code review'
           ])
@@ -462,7 +466,7 @@ module.exports = [
           ['right', 
           ['a', {
             href: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003851'
-          }, util.icon('link'), 'PLOS'],
+          }, util.icon('link'), 'plos.org'],
           'May 2013 - August 2013']
         ],
         [
