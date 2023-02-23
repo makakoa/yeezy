@@ -4,7 +4,9 @@ var util = require('./util'),
     fs = require('fs'),
     _ = require('lodash');
 
-var resumePath = 'http://cameron-yee.com/resume/cameron-yee-resume.pdf';
+var resumePath = 'https://makakoa.github.io/website/resume/cameron-yee-resume.pdf';
+var webResumeURL = 'https://makakoa.github.io/website/resume/';
+var webResumeText = 'makakoa.github.io/website/resume';
 
 var keywords = fs.readFileSync('./resume/keywords.txt')
       .toString()
@@ -739,8 +741,8 @@ module.exports = [
     [
       'qr-code',
       ['a', {
-        href: 'http://cameron-yee.com/resume'
-      }, 'cameron-yee.com/resume']
+        href: webResumeURL
+      }, webResumeText]
       // ['img', {src: './resume/qrcode.svg'}]
     ],
 
@@ -817,9 +819,9 @@ module.exports = [
       'a',
       {
         id: 'online-tag',
-        href: 'http://cameron-yee.com/resume'
+        href: webResumeURL
       },
-      'cameron-yee.com/resume'
+      webResumeText
     ]
   ]
 ];

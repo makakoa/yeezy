@@ -1,7 +1,7 @@
 'use strict';
 
 // leave as null to redact
-var email = 'makakoa57@gmail.com' || process.env.EMAIL || null;
+var email = process.env.EMAIL || null;
 var phone = process.env.PHONE || null;
 
 var util = require('./util');
@@ -39,7 +39,7 @@ module.exports = [
       id: 'email-link',
       class: [
         'header-info-item',
-        email ? 'contact' : ''
+        'contact',
       ].join(' '),
       href: 'mailto:' + email
     }, util.icon('envelope-o'),
